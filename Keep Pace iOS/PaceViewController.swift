@@ -10,9 +10,14 @@ import UIKit
 
 class PaceViewController: UIViewController {
 
+    
+    @IBOutlet weak var justWildcard: UIButton!
+    
+    var justWildcardText = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        justWildcard.setTitle(justWildcardText, for: .normal)
         // Do any additional setup after loading the view.
     }
 
