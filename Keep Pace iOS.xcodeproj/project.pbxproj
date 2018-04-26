@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
 		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
 		D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */; };
 		D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */; };
-		D7D9DB2020911C7E0000EFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB1F20911C7E0000EFA7 /* Assets.xcassets */; };
 		D7D9DB2320911C7E0000EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */; };
 		D7D9DB2E20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB2D20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift */; };
 		D7D9DB3920911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB3820911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift */; };
@@ -43,11 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D7D9DB1D20911C7C0000EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D7D9DB1F20911C7E0000EFA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D9DB2220911C7E0000EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D9DB2420911C7E0000EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D9DB2920911C7E0000EFA7 /* Keep Pace iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep Pace iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +127,8 @@
 				D7D9DB52209124800000EFA7 /* PaceViewController.swift */,
 				D7D9DB54209124880000EFA7 /* TimerViewController.swift */,
 				D7D9DB4820911D010000EFA7 /* TOSViewController.swift */,
-				D7D9DB1F20911C7E0000EFA7 /* Assets.xcassets */,
 				D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */,
+				D78FD7042092799D00124110 /* Assets.xcassets */,
 				D7D9DB2420911C7E0000EFA7 /* Info.plist */,
 			);
 			path = "Keep Pace iOS";
@@ -265,9 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D9DB2320911C7E0000EFA7 /* LaunchScreen.storyboard in Resources */,
-				D7D9DB2020911C7E0000EFA7 /* Assets.xcassets in Resources */,
 				D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */,
 				D7D9DB5920912BA50000EFA7 /* RacingSansOne-Regular.ttf in Resources */,
+				D78FD7052092799D00124110 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

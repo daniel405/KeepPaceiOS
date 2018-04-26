@@ -21,6 +21,10 @@ class RaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
+            DestinationViewController.justWildcardText = "Just Race"
+    }
 
     /*
     // MARK: - Navigation

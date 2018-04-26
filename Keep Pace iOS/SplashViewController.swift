@@ -21,6 +21,12 @@ class SplashViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            self.performSegue(withIdentifier: "toTOS", sender: self)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

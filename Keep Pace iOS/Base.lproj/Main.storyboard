@@ -40,10 +40,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-w2-xIc">
-                                <rect key="frame" x="112.66666666666669" y="389" width="150" height="34"/>
+                                <rect key="frame" x="134.66666666666666" y="389" width="105" height="34"/>
                                 <color key="backgroundColor" red="0.12175002274670399" green="0.69489910560303181" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Jxg-7C-hE6"/>
+                                    <constraint firstAttribute="height" constant="34" id="BoA-MR-361"/>
+                                    <constraint firstAttribute="width" constant="105" id="adp-fZ-UCy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
                                 <state key="normal" title="Get Started">
@@ -58,22 +59,24 @@
                                     <segue destination="N2B-qE-W7X" kind="show" id="uzM-pU-Q3i"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="By clicking above, you agree to Keep Pace's Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt2-KK-ga4">
-                                <rect key="frame" x="56" y="431" width="263" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="By clicking above, you agree to Keep Pace's Terms &amp; Conditions" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc5-W7-dfR">
+                                <rect key="frame" x="67" y="431" width="240" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sNv-w2-xIc" firstAttribute="centerY" secondItem="ekd-r0-hB0" secondAttribute="centerY" id="2ag-0y-KH0"/>
-                            <constraint firstItem="sNv-w2-xIc" firstAttribute="centerX" secondItem="ekd-r0-hB0" secondAttribute="centerX" id="miV-Up-QYs"/>
-                            <constraint firstItem="gt2-KK-ga4" firstAttribute="top" secondItem="sNv-w2-xIc" secondAttribute="bottom" constant="8" id="vvd-6s-Fgj"/>
+                            <constraint firstItem="sNv-w2-xIc" firstAttribute="centerX" secondItem="ekd-r0-hB0" secondAttribute="centerX" id="u09-zo-dos"/>
+                            <constraint firstItem="sNv-w2-xIc" firstAttribute="centerY" secondItem="ekd-r0-hB0" secondAttribute="centerY" id="uRY-2i-W0o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rdl-wl-hNj"/>
                     </view>
                     <connections>
+                        <outlet property="tosLink" destination="Uc5-W7-dfR" id="3sh-ZS-CCl"/>
                         <segue destination="N2B-qE-W7X" kind="show" identifier="toMain" id="D5y-2f-5zS"/>
                     </connections>
                 </viewController>
@@ -133,7 +136,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="glr-25-Bcn" kind="show" id="tMK-fA-J2I"/>
+                                    <segue destination="glr-25-Bcn" kind="show" identifier="fromGrind" id="Kwo-oK-SoC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmi-6Q-c4q">
@@ -150,7 +153,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="LyJ-BG-HYd" kind="show" id="QLi-Ba-Ddc"/>
+                                    <segue destination="LyJ-BG-HYd" kind="show" identifier="" id="QLi-Ba-Ddc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-jH-bC0">
@@ -167,7 +170,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="eiQ-Jx-tQV" kind="show" id="uKT-fC-zXL"/>
+                                    <segue destination="eiQ-Jx-tQV" kind="show" identifier="" id="uKT-fC-zXL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -271,6 +274,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GrF-cE-BgR"/>
                     </view>
+                    <connections>
+                        <segue destination="glr-25-Bcn" kind="show" identifier="fromRace" id="Abl-4L-1h0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZG-LH-iP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,6 +328,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="d4f-NJ-ZJT"/>
                     </view>
+                    <connections>
+                        <segue destination="glr-25-Bcn" kind="show" identifier="fromCrunch" id="wc9-uB-NeM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAs-DM-0kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,7 +349,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                <state key="normal" title="Just *">
+                                <state key="normal" title="Just Wildcard">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -373,10 +382,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WF3-kv-xdx"/>
                     </view>
+                    <connections>
+                        <outlet property="justWildcard" destination="tjT-cf-rZj" id="h2e-Ma-Ru3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulf-JI-wYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="-164"/>
+            <point key="canvasLocation" x="3148" y="-203.20197044334975"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="8ex-Sj-pEB">
@@ -391,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ark-Xm-HY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3927" y="-164"/>
+            <point key="canvasLocation" x="3980" y="-203"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="0h4-lC-ikp">
@@ -401,12 +413,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-Va-1Uo">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KPSplash" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-Va-1Uo">
+                                <rect key="frame" x="67" y="342" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.17093199491500854" green="0.61840784549713135" blue="0.89275139570236206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hfF-od-3Jq"/>
                     </view>
                     <connections>
@@ -418,9 +430,12 @@
             <point key="canvasLocation" x="-1516" y="-168"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="KPSplash" width="1200" height="1200"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="A8p-28-bNx"/>
-        <segue reference="X5e-nO-7ji"/>
+        <segue reference="Abl-4L-1h0"/>
         <segue reference="uzM-pU-Q3i"/>
     </inferredMetricsTieBreakers>
 </document>
