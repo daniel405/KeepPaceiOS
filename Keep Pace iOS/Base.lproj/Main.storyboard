@@ -39,51 +39,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-hU-fEl">
-                                <rect key="frame" x="87.666666666666686" y="324.66666666666669" width="200" height="163"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-w2-xIc">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
-                                        <color key="backgroundColor" red="0.12175002274670399" green="0.69489910560303181" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="BoA-MR-361"/>
-                                            <constraint firstAttribute="width" constant="105" id="adp-fZ-UCy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                        <state key="normal" title="Get Started">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="N2B-qE-W7X" kind="show" id="uzM-pU-Q3i"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="By clicking above, you agree to Keep Pace's Terms &amp; Conditions" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc5-W7-dfR">
-                                        <rect key="frame" x="0.0" y="42" width="200" height="121"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                    </textView>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-w2-xIc">
+                                <rect key="frame" x="87" y="389" width="200" height="34"/>
+                                <color key="backgroundColor" red="0.12175002274670399" green="0.69489910560303181" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0jj-mz-vwc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Odc-ZE-PIF"/>
-                                    <constraint firstAttribute="height" constant="163" id="ZDE-JY-hQr"/>
+                                    <constraint firstAttribute="height" constant="34" id="BoA-MR-361"/>
+                                    <constraint firstAttribute="width" constant="105" id="adp-fZ-UCy"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="N2B-qE-W7X" kind="show" id="uzM-pU-Q3i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By clicking above, you agree to Keep Pace's Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c15-dt-07H">
+                                <rect key="frame" x="55" y="431" width="265" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="kvm-hU-fEl" firstAttribute="centerY" secondItem="ekd-r0-hB0" secondAttribute="centerY" id="CVL-Ij-1xc"/>
-                            <constraint firstItem="kvm-hU-fEl" firstAttribute="centerX" secondItem="ekd-r0-hB0" secondAttribute="centerX" id="RP7-tX-aW3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rdl-wl-hNj"/>
                     </view>
+                    <connections>
+                        <outlet property="tosLinkLabel" destination="c15-dt-07H" id="dGe-mG-gLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dC-St-gLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

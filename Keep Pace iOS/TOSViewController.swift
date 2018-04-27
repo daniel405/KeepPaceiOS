@@ -12,13 +12,14 @@ class TOSViewController: UIViewController {
 
     
     @IBOutlet weak var tosLinkLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer(target: self, action: #selector(TOSViewController.tapFunction))
         tosLinkLabel.isUserInteractionEnabled = true
         tosLinkLabel.addGestureRecognizer(tap)
-       
+        
     }
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         UIApplication.shared.open(URL(string : "http://www.google.com")!, options: [:], completionHandler: { (status) in
