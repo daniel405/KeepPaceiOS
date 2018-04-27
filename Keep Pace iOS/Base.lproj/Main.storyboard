@@ -85,36 +85,83 @@
                         <viewLayoutGuide key="safeArea" id="Rdl-wl-hNj"/>
                     </view>
                     <connections>
-                        <outlet property="tosLink" destination="Uc5-W7-dfR" id="3sh-ZS-CCl"/>
-                        <segue destination="N2B-qE-W7X" kind="show" identifier="toMain" id="D5y-2f-5zS"/>
+                        <outlet property="tosLinkLabel" destination="Y4u-5u-Hhg" id="QjY-0F-TzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dC-St-gLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-700" y="-169.21182266009853"/>
         </scene>
-        <!--Records View Controller-->
+        <!--User Log View Controller-->
         <scene sceneID="Hs3-Z8-z3Q">
             <objects>
-                <viewController id="gGc-Ix-Xpj" customClass="RecordsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gGc-Ix-Xpj" customClass="UserLogViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aLQ-UY-MzM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="A2e-Xg-G5h"/>
                     </view>
+                    <connections>
+                        <segue destination="OC1-eX-cCQ" kind="show" id="fQu-Cw-DB9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hl-go-OpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="702" y="601"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Records View Controller-->
+        <scene sceneID="P2P-lO-2M2">
+            <objects>
+                <viewController id="OC1-eX-cCQ" customClass="RecordsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jW8-pm-3Aa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tvo-Hv-0nK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tlm-4D-Idd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="1319"/>
+        </scene>
+        <!--Settings View Controller-->
         <scene sceneID="8Sf-U0-9LH">
             <objects>
-                <viewController id="Z2K-nE-Xlb" customClass="ProfileViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z2K-nE-Xlb" customClass="SettingsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dWh-DE-xir">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayd-VE-66M">
+                                <rect key="frame" x="16" y="118" width="88" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.087689243257045746" green="0.47799801826477051" blue="0.93504112958908081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3S-rD-Cwg">
+                                <rect key="frame" x="16" y="158" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-Ow-URq">
+                                <rect key="frame" x="16" y="224" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulB-uM-Lgu">
+                                <rect key="frame" x="16" y="306" width="93" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.087689243259999994" green="0.47799801829999999" blue="0.93504112959999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QTQ-Wj-yfh"/>
                     </view>
@@ -198,12 +245,12 @@
                     <navigationItem key="navigationItem" id="m6Q-G3-asL">
                         <barButtonItem key="leftBarButtonItem" title="Records" id="J4I-z8-0EY">
                             <connections>
-                                <segue destination="gGc-Ix-Xpj" kind="show" identifier="toRecords" id="n4H-dd-6yt"/>
+                                <segue destination="gGc-Ix-Xpj" kind="show" identifier="toUserLog" id="n4H-dd-6yt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Profile" id="xeg-sZ-afa">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="xeg-sZ-afa">
                             <connections>
-                                <segue destination="Z2K-nE-Xlb" kind="show" identifier="toProfile" id="KE4-9s-S2Q"/>
+                                <segue destination="Z2K-nE-Xlb" kind="show" identifier="toSettings" id="KE4-9s-S2Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
