@@ -13,7 +13,7 @@ class PaceViewController: UIViewController {
     
     @IBOutlet weak var justWildcard: UIButton!
     
-    var justWildcardText = String()
+    var justWildcardText : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

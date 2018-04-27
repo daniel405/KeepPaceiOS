@@ -21,6 +21,14 @@ class CrunchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func button_457(_ sender: Any) {
+        performSegue(withIdentifier: "fromCrunch", sender: sender)
+    }
+    
+    @IBAction func button_437(_ sender: Any) {
+        performSegue(withIdentifier: "fromCrunch", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
             DestinationViewController.justWildcardText = "Just Crunch"

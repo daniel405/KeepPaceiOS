@@ -21,6 +21,26 @@ class RaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func button_5K(_ sender: Any) {
+        performSegue(withIdentifier: "fromRace", sender: sender)
+
+    }
+    
+    @IBAction func button_10K(_ sender: Any) {
+        performSegue(withIdentifier: "fromRace", sender: sender)
+
+    }
+    
+    @IBAction func button_halfMarathon(_ sender: Any) {
+        performSegue(withIdentifier: "fromRace", sender: sender)
+
+    }
+    
+    @IBAction func button_fullfMarathon(_ sender: Any) {
+        performSegue(withIdentifier: "fromRace", sender: sender)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
             DestinationViewController.justWildcardText = "Just Race"
