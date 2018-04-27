@@ -71,11 +71,18 @@
                         <viewLayoutGuide key="safeArea" id="Rdl-wl-hNj"/>
                     </view>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                     <connections>
                         <outlet property="tosLinkLabel" destination="c15-dt-07H" id="dGe-mG-gLy"/>
                     </connections>
 >>>>>>> effd8b014e9f3755da08eecd908fbb7c7ee58af4
+=======
+
+                    <connections>
+                        <outlet property="tosLinkLabel" destination="c15-dt-07H" id="dGe-mG-gLy"/>
+                    </connections>
+>>>>>>> bef06aa85f8dc19227698090d010d23fce7edde0
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dC-St-gLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -525,10 +532,13 @@
     </resources>
     <inferredMetricsTieBreakers>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="A8p-28-bNx"/>
 =======
         <segue reference="t0v-d6-hkt"/>
 >>>>>>> effd8b014e9f3755da08eecd908fbb7c7ee58af4
         <segue reference="Kwo-oK-SoC"/>
+=======
+>>>>>>> bef06aa85f8dc19227698090d010d23fce7edde0
     </inferredMetricsTieBreakers>
 </document>
