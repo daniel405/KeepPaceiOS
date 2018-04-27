@@ -84,9 +84,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rdl-wl-hNj"/>
                     </view>
-                    <connections>
-                        <outlet property="tosLinkLabel" destination="Y4u-5u-Hhg" id="QjY-0F-TzO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dC-St-gLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +112,7 @@
             <objects>
                 <viewController id="OC1-eX-cCQ" customClass="RecordsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jW8-pm-3Aa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tvo-Hv-0nK"/>
@@ -536,7 +533,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="A8p-28-bNx"/>
-        <segue reference="wc9-uB-NeM"/>
-        <segue reference="D5y-2f-5zS"/>
+        <segue reference="Kwo-oK-SoC"/>
     </inferredMetricsTieBreakers>
 </document>
