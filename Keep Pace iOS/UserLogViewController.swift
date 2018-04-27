@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  UserLogViewController.swift
 //  Keep Pace iOS
 //
 //  Created by Daniel Katz on 2018-04-25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class UserLogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
