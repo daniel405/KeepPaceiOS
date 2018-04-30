@@ -22,20 +22,28 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
-            self.performSegue(withIdentifier: "toTOS", sender: self)
+        
+
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if launchedBefore  {
+            // Not first launch
+        
+            // Display splash image for 3.0 seconds before moving to TOS
+            _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
+                self.performSegue(withIdentifier: "toNav", sender: self)
+            }
+            
+        } else {
+            // First launch
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+    
+            // Display splash image for 3.0 seconds before moving to TOS
+            _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
+                self.performSegue(withIdentifier: "toTOS", sender: self)
+            }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
