@@ -12,18 +12,24 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Title logo
+        let logo = UIImage(named: "KP(Blue)")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Sets wildcard button string to "Just Grind"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if (segue.identifier == "fromGrind") {
+        if (segue.identifier == "fromGrind") {
             let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
-        DestinationViewController.justWildcardText = "Just Grind"
+            DestinationViewController.justWildcardText = "Just Grind"
         }
     }
 

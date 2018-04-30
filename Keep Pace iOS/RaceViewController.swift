@@ -12,48 +12,56 @@ class RaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Title logo
+        let logo = UIImage(named: "KP(Blue)")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
+        
+        // Calls function "backToHome"
+        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(RaceViewController.backToHome))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapBackToHome)
+    }
+    
+    // Opens Terms of Service on website
+    @objc func backToHome(sender:UITapGestureRecognizer) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // 5 Kilometer button action
     @IBAction func button_5K(_ sender: Any) {
         performSegue(withIdentifier: "fromRace", sender: sender)
 
     }
     
+    // 10 Kilometer button action
     @IBAction func button_10K(_ sender: Any) {
         performSegue(withIdentifier: "fromRace", sender: sender)
 
     }
     
+    // Half marathon button action
     @IBAction func button_halfMarathon(_ sender: Any) {
         performSegue(withIdentifier: "fromRace", sender: sender)
 
     }
     
+    // Full marathon button action
     @IBAction func button_fullfMarathon(_ sender: Any) {
         performSegue(withIdentifier: "fromRace", sender: sender)
     }
     
     
+    // Sets wildcard button string to "Just Race"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
             DestinationViewController.justWildcardText = "Just Race"
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

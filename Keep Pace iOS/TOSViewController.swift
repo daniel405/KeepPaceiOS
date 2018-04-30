@@ -15,12 +15,14 @@ class TOSViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Calls funciton "tapFunction"
         let tap = UITapGestureRecognizer(target: self, action: #selector(TOSViewController.tapFunction))
         tosLinkLabel.isUserInteractionEnabled = true
         tosLinkLabel.addGestureRecognizer(tap)
-        
     }
+    
+    // Opens Terms of Service on website
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         UIApplication.shared.open(URL(string : "http://www.google.com")!, options: [:], completionHandler: { (status) in
         })
@@ -29,20 +31,5 @@ class TOSViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

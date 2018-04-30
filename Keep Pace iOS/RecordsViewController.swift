@@ -10,12 +10,27 @@ import UIKit
 
 class RecordsViewController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Title logo
+        let logo = UIImage(named: "KP(Blue)")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
+        // Calls function "backToHome"
+        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(RecordsViewController.backToHome))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapBackToHome)
     }
-
+    
+    // Goes back to home page
+    @objc func backToHome(sender:UITapGestureRecognizer) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
