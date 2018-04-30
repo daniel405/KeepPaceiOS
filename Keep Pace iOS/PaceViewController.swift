@@ -10,31 +10,36 @@ import UIKit
 
 class PaceViewController: UIViewController {
 
-    
+    // Wildcard button
     @IBOutlet weak var justWildcard: UIButton!
     
+    // Wildcard button string
     var justWildcardText : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Title logo
+        let logo = UIImage(named: "KP(Blue)")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
+        // Setting wildcard button to "Just Crunch", "Just Grind" or "Just Race"
         justWildcard.setTitle(justWildcardText, for: .normal)
-        // Do any additional setup after loading the view.
+    
+        // Calls function "backToHome"
+        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(PaceViewController.backToHome))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapBackToHome)
+    }
+    
+    // Goes back to home page
+    @objc func backToHome(sender:UITapGestureRecognizer) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

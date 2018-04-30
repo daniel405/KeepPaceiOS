@@ -1,5 +1,5 @@
 //
-//  UserLogViewController.swift
+//  SettingsViewController.swift
 //  Keep Pace iOS
 //
 //  Created by Daniel Katz on 2018-04-25.
@@ -8,19 +8,43 @@
 
 import UIKit
 
-class UserLogViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var modeType: UILabel!
+    @IBOutlet weak var modeSwitch: UISwitch!
+    
+    @IBAction func modeSwitchToggle(_ sender: Any) {
+        if modeSwitch.isOn == true
+        {
+            modeType.text = "On"
+        }
+        else
+        {
+            modeType.text = "Off"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Title logo
         let logo = UIImage(named: "KP(Blue)")
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
+        modeSwitch.isOn = false
+        if modeSwitch.isOn == true
+        {
+            modeType.text = "On"
+        }
+        else
+        {
+            modeType.text = "Off"
+        }
+     
         // Calls function "backToHome"
-        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(UserLogViewController.backToHome))
+        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.backToHome))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapBackToHome)
     }
@@ -29,21 +53,9 @@ class UserLogViewController: UIViewController {
     @objc func backToHome(sender:UITapGestureRecognizer) {
         self.navigationController?.popToRootViewController(animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
