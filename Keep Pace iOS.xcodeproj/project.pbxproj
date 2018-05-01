@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */; };
+		24DEA8652097D46A001809B0 /* RecordModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */; };
+		24DEA8662097D46A001809B0 /* RecordModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */; };
+		24DEA8672097D46A001809B0 /* RaceModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */; };
+		24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */; };
+		24DEA86B2097D920001809B0 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86A2097D920001809B0 /* DatabaseHelper.swift */; };
+		24DEA86F2097E101001809B0 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86E2097E101001809B0 /* RaceSeed.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
 		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
@@ -44,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KeepPaceDataModel.xcdatamodel; sourceTree = "<group>"; };
+		24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		24DEA86A2097D920001809B0 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		24DEA86E2097E101001809B0 /* RaceSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24DEA85D2097D2B1001809B0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */,
+				24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */,
+				24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */,
+				24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		24DEA8692097D90C001809B0 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				24DEA86A2097D920001809B0 /* DatabaseHelper.swift */,
+				24DEA86E2097E101001809B0 /* RaceSeed.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
 		D7D9DB0C20911C7C0000EFA7 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +151,8 @@
 		D7D9DB1720911C7C0000EFA7 /* Keep Pace iOS */ = {
 			isa = PBXGroup;
 			children = (
+				24DEA8692097D90C001809B0 /* database */,
+				24DEA85D2097D2B1001809B0 /* model */,
 				D7D9DB5720912B9A0000EFA7 /* fonts */,
 				D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */,
 				D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */,
@@ -133,6 +169,7 @@
 				D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */,
 				D78FD7042092799D00124110 /* Assets.xcassets */,
 				D7D9DB2420911C7E0000EFA7 /* Info.plist */,
+				24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */,
 			);
 			path = "Keep Pace iOS";
 			sourceTree = "<group>";
@@ -295,13 +332,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DEA8662097D46A001809B0 /* RecordModel+CoreDataProperties.swift in Sources */,
 				D7D9DB55209124880000EFA7 /* TimerViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
+				24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
 				D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */,
+				24DEA8672097D46A001809B0 /* RaceModel+CoreDataClass.swift in Sources */,
 				D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */,
+				24DEA86F2097E101001809B0 /* RaceSeed.swift in Sources */,
+				24DEA8652097D46A001809B0 /* RecordModel+CoreDataClass.swift in Sources */,
+				24DEA86B2097D920001809B0 /* DatabaseHelper.swift in Sources */,
 				D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */,
+				24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */,
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
 				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
@@ -479,13 +523,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 648N4J5SDZ;
+				DEVELOPMENT_TEAM = K5T96TDXCA;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bcit.Keep-Pace-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS.QL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,13 +541,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 648N4J5SDZ;
+				DEVELOPMENT_TEAM = K5T96TDXCA;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bcit.Keep-Pace-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS.QL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -628,6 +672,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */,
+			);
+			currentVersion = 24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */;
+			path = KeepPaceDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D7D9DB0D20911C7C0000EFA7 /* Project object */;
 }
