@@ -9,23 +9,64 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    @IBOutlet weak var modeType: UILabel!
-    @IBOutlet weak var modeSwitch: UISwitch!
+   
     
-    @IBAction func modeSwitchToggle(_ sender: Any) {
-        if modeSwitch.isOn == true
-        {
-            modeType.text = "On"
+    let unitType = UserDefaults.standard.string(forKey: "unitType")
+    let modeType = UserDefaults.standard.string(forKey: "modeType")
+    
+    @IBOutlet var unitButtons: [UIButton]!
+    @IBOutlet var modeButtons: [UIButton]!
+    
+    @IBOutlet weak var unitSelection: UIButton!
+    @IBOutlet weak var modeSelection: UIButton!
+    
+    @IBAction func handleUnitSelection(_ sender: Any) {
+        unitButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+            })
         }
-        else
-        {
-            modeType.text = "Off"
+    }
+    
+    @IBAction func handleModeSelection(_ sender: Any) {
+        modeButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+            })
+        }
+    }
+    
+    
+    @IBAction func modeTapped(_ sender: Any) {
+        modeSelection.setTitle((sender as AnyObject).currentTitle, for: .normal)
+        modeButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = true
+            })
+            UserDefaults.standard.set(modeSelection.currentTitle, forKey: "modeType")
+        }
+    }
+    
+    
+    @IBAction func unitTapped(_ sender: Any) {
+        unitSelection.setTitle((sender as AnyObject).currentTitle, for: .normal)
+        unitButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = true
+            })
+            UserDefaults.standard.set(unitSelection.currentTitle, forKey: "unitType")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if modeType != nil {
+            modeSelection.setTitle(modeType, for: .normal)
+        }
+        if unitType != nil {
+            unitSelection.setTitle(unitType, for: .normal)
+        }
+
         
         // Title logo
         let logo = UIImage(named: "KP(Blue)")
@@ -33,16 +74,6 @@ class SettingsViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
-        modeSwitch.isOn = false
-        if modeSwitch.isOn == true
-        {
-            modeType.text = "On"
-        }
-        else
-        {
-            modeType.text = "Off"
-        }
-     
         // Calls function "backToHome"
         let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.backToHome))
         imageView.isUserInteractionEnabled = true

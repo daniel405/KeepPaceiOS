@@ -1,17 +1,34 @@
 //
-//  TimerViewController.swift
+//  JustTimerViewController.swift
 //  Keep Pace iOS
 //
 //  Created by Daniel Katz on 2018-04-25.
 //  Copyright © 2018 Daniel Katz. All rights reserved.
-//
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class JustTimerViewController: UIViewController {
+    
+    let modeType = UserDefaults.standard.string(forKey: "modeType")
+    
+    @IBOutlet weak var pauseButtonStyle: UIButton!
+    @IBOutlet weak var resetButtonStyle: UIButton!
+    
+    @IBAction func pauseButton(_ sender: Any) {
+    }
+    
+    @IBAction func resetButton(_ sender: Any) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if modeType == "Pro Mode"
+        {
+            pauseButtonStyle.isHidden = true
+            pauseButtonStyle.isEnabled = false
+            resetButtonStyle.center.x = self.view.center.x
+        }
         
         // Title logo
         let logo = UIImage(named: "KP(Blue)")
@@ -20,7 +37,7 @@ class TimerViewController: UIViewController {
         self.navigationItem.titleView = imageView
         
         // Calls function "backToHome"
-        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(TimerViewController.backToHome))
+        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(JustTimerViewController.backToHome))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapBackToHome)
     }
