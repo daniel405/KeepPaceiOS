@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
+		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
 		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
 		D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */; };
@@ -22,7 +23,7 @@
 		D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4E209124660000EFA7 /* RaceViewController.swift */; };
 		D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */; };
 		D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB52209124800000EFA7 /* PaceViewController.swift */; };
-		D7D9DB55209124880000EFA7 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB54209124880000EFA7 /* TimerViewController.swift */; };
+		D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */; };
 		D7D9DB5920912BA50000EFA7 /* RacingSansOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB5820912BA50000EFA7 /* RacingSansOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		D7D9DB4E209124660000EFA7 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
 		D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrunchViewController.swift; sourceTree = "<group>"; };
 		D7D9DB52209124800000EFA7 /* PaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceViewController.swift; sourceTree = "<group>"; };
-		D7D9DB54209124880000EFA7 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTimerViewController.swift; sourceTree = "<group>"; };
 		D7D9DB5820912BA50000EFA7 /* RacingSansOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RacingSansOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +130,8 @@
 				D7D9DB4E209124660000EFA7 /* RaceViewController.swift */,
 				D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */,
 				D7D9DB52209124800000EFA7 /* PaceViewController.swift */,
-				D7D9DB54209124880000EFA7 /* TimerViewController.swift */,
+				D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */,
+				D74CD0972098132000D98014 /* BestTimerViewController.swift */,
 				D7D9DB4820911D010000EFA7 /* TOSViewController.swift */,
 				D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */,
 				D78FD7042092799D00124110 /* Assets.xcassets */,
@@ -295,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D9DB55209124880000EFA7 /* TimerViewController.swift in Sources */,
+				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
@@ -305,6 +308,7 @@
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
 				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
+				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
 				D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
