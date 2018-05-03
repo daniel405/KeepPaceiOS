@@ -8,12 +8,18 @@
 
 import Foundation
 
+//This data structure will be used to help seed race data
 struct RaceSeed {
+    //Name of the race
     var Name: String
+    
+    //Distance
     var Distance: Double
+    
+    //Number of Markers
     var Markers: Int64
     
-    //Initialize Race Seed with data
+    //Initialize RaceSeed with Dummy Data
     init(_Name: String, _Distance: Double, _Markers: Int64) {
         Name = _Name
         Distance = _Distance

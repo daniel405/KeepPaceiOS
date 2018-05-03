@@ -10,6 +10,6 @@
 import Foundation
 import CoreData
 
-@objc(RecordModel)
+//@objc(RecordModel)
 public class RecordModel: NSManagedObject {
 }
