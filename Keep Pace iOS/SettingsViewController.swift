@@ -66,23 +66,10 @@ class SettingsViewController: UIViewController {
         if unitType != nil {
             unitSelection.setTitle(unitType, for: .normal)
         }
-
         
-        // Title logo
-        let logo = UIImage(named: "KP(Blue)")
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
-        
-        // Calls function "backToHome"
-        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.backToHome))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapBackToHome)
-    }
-    
-    // Goes back to home page
-    @objc func backToHome(sender:UITapGestureRecognizer) {
-        self.navigationController?.popToRootViewController(animated: true)
+        //Navigation bar title text
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
     override func didReceiveMemoryWarning() {

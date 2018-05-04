@@ -11,6 +11,8 @@ class JustTimerViewController: UIViewController {
     
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     
+    var titleText : String = ""
+    
     @IBOutlet weak var pauseButtonStyle: UIButton!
     @IBOutlet weak var resetButtonStyle: UIButton!
     
@@ -30,21 +32,21 @@ class JustTimerViewController: UIViewController {
             resetButtonStyle.center.x = self.view.center.x
         }
         
-        // Title logo
-        let logo = UIImage(named: "KP(Blue)")
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
+        //Navigation bar title text
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
-        // Calls function "backToHome"
-        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(JustTimerViewController.backToHome))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapBackToHome)
-    }
-    
-    // Goes back to home page
-    @objc func backToHome(sender:UITapGestureRecognizer) {
-        self.navigationController?.popToRootViewController(animated: true)
+        switch (titleText)
+        {
+        case "Just Grind":
+            self.title = "Grind Pace"
+        case "Just Crunch":
+            self.title = "Crunch Pace"
+        case "Just Race":
+            self.title = "Race Pace"
+        default:
+            print ("default")
+        }
     }
     
     override func didReceiveMemoryWarning() {
