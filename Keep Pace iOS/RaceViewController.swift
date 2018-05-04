@@ -13,24 +13,13 @@ class RaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Title logo
-        let logo = UIImage(named: "KP(Blue)")
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
-        
-        
-        // Calls function "backToHome"
-        let tapBackToHome = UITapGestureRecognizer(target: self, action: #selector(RaceViewController.backToHome))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapBackToHome)
-    }
-    
-    // Opens Terms of Service on website
-    @objc func backToHome(sender:UITapGestureRecognizer) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+        //Navigation bar title text
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
 
+            }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

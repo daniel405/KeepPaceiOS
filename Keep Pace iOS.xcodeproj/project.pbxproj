@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
+		D78735DA209D02340073C700 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
+		D7C854A120994F3800EDAF61 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */; };
 		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
 		D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */; };
 		D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */; };
@@ -47,7 +49,9 @@
 /* Begin PBXFileReference section */
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
+		D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +123,6 @@
 		D7D9DB1720911C7C0000EFA7 /* Keep Pace iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D7D9DB5720912B9A0000EFA7 /* fonts */,
 				D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */,
 				D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */,
 				D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */,
@@ -127,6 +130,8 @@
 				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
 				D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */,
 				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
+				D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */,
+				D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */,
 				D7D9DB4E209124660000EFA7 /* RaceViewController.swift */,
 				D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */,
 				D7D9DB52209124800000EFA7 /* PaceViewController.swift */,
@@ -136,6 +141,7 @@
 				D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */,
 				D78FD7042092799D00124110 /* Assets.xcassets */,
 				D7D9DB2420911C7E0000EFA7 /* Info.plist */,
+				D7D9DB5720912B9A0000EFA7 /* fonts */,
 			);
 			path = "Keep Pace iOS";
 			sourceTree = "<group>";
@@ -230,7 +236,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "Group 10";
+				ORGANIZATIONNAME = "Daniel Katz";
 				TargetAttributes = {
 					D7D9DB1420911C7C0000EFA7 = {
 						CreatedOnToolsVersion = 9.3;
@@ -299,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
+				D7C854A120994F3800EDAF61 /* SettingsTableViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
+				D78735DA209D02340073C700 /* DistanceUnitTableViewController.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
 				D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */,
 				D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */,
@@ -483,14 +491,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KKTK8WHBM5;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,14 +509,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KKTK8WHBM5;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
