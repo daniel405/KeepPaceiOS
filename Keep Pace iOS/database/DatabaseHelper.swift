@@ -27,6 +27,14 @@ class DatabaseHelper {
         RaceSeed(_Name: "437 Steps", _Distance: 0.3, _Markers: 9)
     ]
     
+    //Dummy Data for seeding race
+    let Records: [RecordSeed] = [
+        RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "Here"),
+        RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "There"),
+        RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "Everywhere")
+    ]
+    
+    
     init() {
         //Initialize this database helper with seedRace
         seedRace()
@@ -38,6 +46,9 @@ class DatabaseHelper {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        
+        var test: RaceModel?
+        
         for i in stride(from: 0, to: Races.count, by: 1) {
             if !checkIfIdExists(managedObjectContext: context, _entityName: entityName, idToLookFor: i) {
                 let raceModel = RaceModel(entity: entity!, insertInto: context)
@@ -45,19 +56,52 @@ class DatabaseHelper {
                 raceModel.mName = Races[i].Name
                 raceModel.mDistance = Races[i].Distance
                 raceModel.mMarkers = Int64(Races[i].Markers)
-                raceModel.mAveragePace = 0.0
-                raceModel.mTime = 0
-                raceModel.mUnit = "km"
+                seedRecord(raceModel: raceModel)
+                printRaceModel(raceModel: raceModel)
                 do {
                     try context.save()
                 } catch {
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
+                test = raceModel
+            }
+
+        }
+        
+        //Print worst and best methods
+        if let worstRecord = test?.getWorstRecord() {
+            printRecordModel(recordModel: worstRecord)
+        }
+        if let bestRecord = test?.getBestRecord() {
+             printRecordModel(recordModel:bestRecord)
+        }
+    }
+    
+    //Update passed in RaceData in CoreData
+    func updateRaceModel(raceModel: RaceModel) {
+        
+    }
+    
+    //Seeds Race Data with Dummy Record Data
+    func seedRecord(raceModel: RaceModel) {
+        let entityName = "RecordModel"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        for i in stride(from: 0, to: Records.count, by: 1) {
+            let recordModel = RecordModel(entity: entity!, insertInto: context)
+            recordModel.mId = Int64(i)
+            recordModel.mAveragePace = Records[i].AveragePace
+            recordModel.mTime = Records[i].Time
+            recordModel.mDate = Records[i].mDate
+            raceModel.addToRecordmodel(recordModel)
+            if i == 1 {
+                raceModel.removeFromRecordmodel(recordModel)
             }
         }
     }
-
+ 
     //Checks to see if Id exists and returns false if not found and true ifand id was found
     func checkIfIdExists(managedObjectContext: NSManagedObjectContext, _entityName: String, idToLookFor: Int) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: _entityName)
@@ -69,13 +113,6 @@ class DatabaseHelper {
             if result == 0 {
                 return false
             }
-            //Else, print the data and do nothing else
-            else
-            {
-                let myObject = try managedObjectContext.fetch(fetchRequest) as! [RaceModel]
-                printRaceModel(raceModel: myObject[0])
-            }
-            
         } catch {
             fatalError("Something went wrong")
         }
@@ -91,6 +128,19 @@ class DatabaseHelper {
         print("Average Pace: " + String(raceModel.mAveragePace))
         print("Time: " + String(raceModel.mTime))
         print("Units: " + raceModel.mUnit!)
+        for item in raceModel.recordmodel! {
+            let record = item as! RecordModel
+            printRecordModel(recordModel: record)
+            print("-------------")
+
+        }
         print("=============")
+    }
+    
+    func printRecordModel(recordModel: RecordModel) {
+        print("Id: " + String(recordModel.mId))
+        print("Average: " + String(recordModel.mAveragePace))
+        print("Time: " + String(recordModel.mTime))
+        print("Date: " + recordModel.mDate!)
     }
 }

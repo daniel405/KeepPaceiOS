@@ -14,6 +14,7 @@
 		24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */; };
 		24DEA86B2097D920001809B0 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86A2097D920001809B0 /* DatabaseHelper.swift */; };
 		24DEA86F2097E101001809B0 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86E2097E101001809B0 /* RaceSeed.swift */; };
+		B01C5035209D0C98008769EB /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5034209D0C98008769EB /* RecordSeed.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		24DEA86A2097D920001809B0 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		24DEA86E2097E101001809B0 /* RaceSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
+		B01C5034209D0C98008769EB /* RecordSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				24DEA86A2097D920001809B0 /* DatabaseHelper.swift */,
 				24DEA86E2097E101001809B0 /* RaceSeed.swift */,
+				B01C5034209D0C98008769EB /* RecordSeed.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -336,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DEA8662097D46A001809B0 /* RecordModel+CoreDataProperties.swift in Sources */,
-				D7D9DB55209124880000EFA7 /* TimerViewController.swift in Sources */,
+				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
 				24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */,
@@ -350,6 +353,7 @@
 				D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */,
 				24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */,
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
+				B01C5035209D0C98008769EB /* RecordSeed.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
 				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
 				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
