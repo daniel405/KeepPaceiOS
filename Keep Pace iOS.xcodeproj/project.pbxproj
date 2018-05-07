@@ -8,18 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */; };
-		24DEA8652097D46A001809B0 /* RecordModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */; };
-		24DEA8662097D46A001809B0 /* RecordModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */; };
-		24DEA8672097D46A001809B0 /* RaceModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */; };
-		24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */; };
-		24DEA86B2097D920001809B0 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86A2097D920001809B0 /* DatabaseHelper.swift */; };
-		24DEA86F2097E101001809B0 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA86E2097E101001809B0 /* RaceSeed.swift */; };
-		B01C5035209D0C98008769EB /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01C5034209D0C98008769EB /* RecordSeed.swift */; };
+		B007C93820A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */; };
+		B007C93920A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */; };
+		B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */; };
+		B007C93B20A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */; };
+		B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */; };
+		B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93E20A0FDC600C03F41 /* RaceSeed.swift */; };
+		B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93F20A0FDC600C03F41 /* RecordSeed.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
-		D78735DA209D02340073C700 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
-		D7C854A120994F3800EDAF61 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */; };
 		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
 		D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */; };
 		D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */; };
@@ -56,13 +54,13 @@
 
 /* Begin PBXFileReference section */
 		24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KeepPaceDataModel.xcdatamodel; sourceTree = "<group>"; };
-		24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		24DEA86A2097D920001809B0 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
-		24DEA86E2097E101001809B0 /* RaceSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
-		B01C5034209D0C98008769EB /* RecordSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
+		B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		B007C93E20A0FDC600C03F41 /* RaceSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
+		B007C93F20A0FDC600C03F41 /* RecordSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
 		D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
@@ -116,23 +114,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24DEA85D2097D2B1001809B0 /* model */ = {
+		B007C93320A0FDBD00C03F41 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				24DEA8612097D46A001809B0 /* RecordModel+CoreDataClass.swift */,
-				24DEA8622097D46A001809B0 /* RecordModel+CoreDataProperties.swift */,
-				24DEA8632097D46A001809B0 /* RaceModel+CoreDataClass.swift */,
-				24DEA8642097D46A001809B0 /* RaceModel+CoreDataProperties.swift */,
+				B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */,
+				B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */,
+				B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */,
+				B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		24DEA8692097D90C001809B0 /* database */ = {
+		B007C93C20A0FDC600C03F41 /* database */ = {
 			isa = PBXGroup;
 			children = (
-				24DEA86A2097D920001809B0 /* DatabaseHelper.swift */,
-				24DEA86E2097E101001809B0 /* RaceSeed.swift */,
-				B01C5034209D0C98008769EB /* RecordSeed.swift */,
+				B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */,
+				B007C93E20A0FDC600C03F41 /* RaceSeed.swift */,
+				B007C93F20A0FDC600C03F41 /* RecordSeed.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -160,6 +158,8 @@
 		D7D9DB1720911C7C0000EFA7 /* Keep Pace iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B007C93C20A0FDC600C03F41 /* database */,
+				B007C93320A0FDBD00C03F41 /* model */,
 				D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */,
 				D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */,
 				D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */,
@@ -342,26 +342,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				24DEA8662097D46A001809B0 /* RecordModel+CoreDataProperties.swift in Sources */,
 				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
-				24DEA8682097D46A001809B0 /* RaceModel+CoreDataProperties.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
+				B007C93920A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift in Sources */,
 				D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */,
-				24DEA8672097D46A001809B0 /* RaceModel+CoreDataClass.swift in Sources */,
 				D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */,
-				24DEA86F2097E101001809B0 /* RaceSeed.swift in Sources */,
-				24DEA8652097D46A001809B0 /* RecordModel+CoreDataClass.swift in Sources */,
-				24DEA86B2097D920001809B0 /* DatabaseHelper.swift in Sources */,
+				B007C93820A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift in Sources */,
 				D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */,
+				B007C93B20A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift in Sources */,
+				B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */,
 				24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */,
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
-				B01C5035209D0C98008769EB /* RecordSeed.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
 				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
+				B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */,
 				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
+				B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */,
+				B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */,
 				D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,13 +535,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6WZ4G2VV7;
+				DEVELOPMENT_TEAM = KKTK8WHBM5;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,13 +553,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G6WZ4G2VV7;
+				DEVELOPMENT_TEAM = KKTK8WHBM5;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
