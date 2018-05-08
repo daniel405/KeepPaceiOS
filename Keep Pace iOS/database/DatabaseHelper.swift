@@ -29,7 +29,7 @@ class DatabaseHelper {
     
     //Dummy Data for seeding race
     let Records: [RecordSeed] = [
-        RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "2018-01-01"),
+        RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "2018-01-RON"),
         RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "2018-02-02"),
         RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "2018-03-03")
     ]
@@ -114,7 +114,7 @@ class DatabaseHelper {
                 print(msg)
                 continue
             } catch {
-                print("Problem with creating RaceModel")
+                print("Problem with creating RecordModel")
                 continue
             }
             raceModel.addToRecordmodel(recordModel)
@@ -151,6 +151,7 @@ class DatabaseHelper {
         print("Time: " + String(raceModel.mTime))
         print("Units: " + raceModel.mUnit!)
         for item in raceModel.recordmodel! {
+            print("-------------")
             let record = item as! RecordModel
             printRecordModel(recordModel: record)
             print("-------------")
