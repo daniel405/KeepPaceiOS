@@ -12,6 +12,16 @@ import CoreData
 
 //@objc(RaceModel)
 public class RaceModel: NSManagedObject {
+    
+    //Enum containing the errors
+    enum RaceModelError: Error {
+        case objectIsNil(msg: String)
+        case invalidInput(msg: String)
+    }
+    
+    //Mile conversion per 1 km
+    let milePerKm: Double = 0.621371
+    
     //Data Initializer Method for Race Model
     public override func awakeFromInsert() {
         mId = -1
@@ -51,5 +61,56 @@ public class RaceModel: NSManagedObject {
             }
         }
         return bestRecord
+    }
+    
+    //Returns the distance in miles
+    func getDistanceInMiles() -> Double {
+        return mDistance * milePerKm
+    }
+    
+    //Returns the average pace in miles
+    func getAveragePaceInMiles() -> Double {
+        return mAveragePace * milePerKm
+    }
+    
+    //Validates inputs
+    func validateAndInsert(value: Any?, forKey: String) throws {
+        if forKey == "mId" {
+            guard let id = value as? Int64 else {
+                throw RaceModelError.objectIsNil(msg: "Nothing in mId")
+            }
+            if id < 0 {
+                throw RaceModelError.invalidInput(msg: "mId cannot be smaller than 0")
+            } else {
+                mId = id
+            }
+        } else if forKey == "mName" {
+            guard let name = value as? String else {
+                throw RaceModelError.objectIsNil(msg: "Nothing in mName")
+            }
+            if name.isEmpty {
+                throw RaceModelError.invalidInput(msg: "mName cannot be empty")
+            } else {
+                mName = name
+            }
+        } else if forKey == "mDistance" {
+            guard let distance = value as? Double else {
+                throw RaceModelError.objectIsNil(msg: "Nothing in distance")
+            }
+            if distance < 0.0 {
+                throw RaceModelError.invalidInput(msg: "Distance cannot be smaller than 0")
+            } else {
+                mDistance = distance
+            }
+        } else if forKey == "mMarkers" {
+            guard let markers = value as? Int64 else {
+                throw RaceModelError.objectIsNil(msg: "Nothing in mMarkers")
+            }
+            if markers < 0 {
+                throw RaceModelError.invalidInput(msg: "mMarkers cannot be smaller than 0")
+            } else {
+                mMarkers = markers
+            }
+        }
     }
 }

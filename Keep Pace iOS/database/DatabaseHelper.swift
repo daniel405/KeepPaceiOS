@@ -29,9 +29,9 @@ class DatabaseHelper {
     
     //Dummy Data for seeding race
     let Records: [RecordSeed] = [
-        RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "Here"),
-        RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "There"),
-        RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "Everywhere")
+        RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "2018-01-01"),
+        RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "2018-02-02"),
+        RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "2018-03-03")
     ]
     
     
@@ -52,10 +52,21 @@ class DatabaseHelper {
         for i in stride(from: 0, to: Races.count, by: 1) {
             if !checkIfIdExists(managedObjectContext: context, _entityName: entityName, idToLookFor: i) {
                 let raceModel = RaceModel(entity: entity!, insertInto: context)
-                raceModel.mId = Int64(i)
-                raceModel.mName = Races[i].Name
-                raceModel.mDistance = Races[i].Distance
-                raceModel.mMarkers = Int64(Races[i].Markers)
+                do {
+                    try raceModel.validateAndInsert(value: Int64(i), forKey: "mId")
+                    try raceModel.validateAndInsert(value: Races[i].Name, forKey: "mName")
+                    try raceModel.validateAndInsert(value: Races[i].Distance, forKey: "mDistance")
+                    try raceModel.validateAndInsert(value: Races[i].Markers, forKey: "mMarkers")
+                } catch RaceModel.RaceModelError.objectIsNil(let msg){
+                    print(msg)
+                    continue
+                } catch RaceModel.RaceModelError.invalidInput(let msg) {
+                    print(msg)
+                    continue
+                } catch {
+                    print("Problem with creating RaceModel")
+                    continue
+                }
                 seedRecord(raceModel: raceModel)
                 printRaceModel(raceModel: raceModel)
                 do {
@@ -91,10 +102,21 @@ class DatabaseHelper {
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         for i in stride(from: 0, to: Records.count, by: 1) {
             let recordModel = RecordModel(entity: entity!, insertInto: context)
-            recordModel.mId = Int64(i)
-            recordModel.mAveragePace = Records[i].AveragePace
-            recordModel.mTime = Records[i].Time
-            recordModel.mDate = Records[i].mDate
+            do {
+                try recordModel.validateAndInsert(value: Int64(i), forKey: "mId")
+                try recordModel.validateAndInsert(value: Records[i].AveragePace, forKey: "mAveragePace")
+                try recordModel.validateAndInsert(value: Records[i].Time, forKey: "mTime")
+                try recordModel.validateAndInsert(value: Records[i].mDate, forKey: "mDate")
+            } catch RaceModel.RaceModelError.objectIsNil(let msg){
+                print(msg)
+                continue
+            } catch RaceModel.RaceModelError.invalidInput(let msg) {
+                print(msg)
+                continue
+            } catch {
+                print("Problem with creating RaceModel")
+                continue
+            }
             raceModel.addToRecordmodel(recordModel)
             if i == 1 {
                 raceModel.removeFromRecordmodel(recordModel)

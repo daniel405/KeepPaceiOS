@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RaceModel" representedClassName=".RaceModel" syncable="YES">
-        <attribute name="mAveragePace" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mAveragePace" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="mId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mId" optional="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mMarkers" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -12,13 +12,13 @@
     </entity>
     <entity name="RecordModel" representedClassName=".RecordModel" syncable="YES">
         <attribute name="mAveragePace" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="mDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mDate" optional="YES" attributeType="String" regularExpressionString="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" syncable="YES"/>
         <attribute name="mId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="racemodel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RaceModel" inverseName="recordmodel" inverseEntity="RaceModel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RaceModel" positionX="216" positionY="-3" width="128" height="163"/>
-        <element name="RecordModel" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="RaceModel" positionX="216" positionY="-3" width="128" height="165"/>
+        <element name="RecordModel" positionX="-54" positionY="-9" width="128" height="120"/>
     </elements>
 </model>
