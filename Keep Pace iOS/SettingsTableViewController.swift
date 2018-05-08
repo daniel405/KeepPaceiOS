@@ -10,18 +10,48 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    let unitType = UserDefaults.standard.string(forKey: "unitType")
-
+    
+    
     @IBOutlet weak var distanceUnitLabel: UIButton!
+
+    @IBOutlet weak var ProModeSwitch: UISwitch!
+    @IBAction func ProModeToggle(_ sender: Any) {
+        
+        if ProModeSwitch.isOn
+        {
+            UserDefaults.standard.set("Pro Mode", forKey: "modeType")
+        }
+        else
+        {
+           UserDefaults.standard.set("Normal Mode", forKey: "modeType")
+        }
+        tableView.reloadData()
+    }
+    
+    let unitType = UserDefaults.standard.string(forKey: "unitType")
+    let modeType = UserDefaults.standard.string(forKey: "modeType")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if unitType != nil {
-           distanceUnitLabel.setTitle(unitType, for: .normal)
-        }
         self.clearsSelectionOnViewWillAppear = false
-
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+       
+        if unitType != nil {
+            distanceUnitLabel.setTitle(unitType, for: .normal)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if modeType == "Pro Mode"
+        {
+            ProModeSwitch.isOn = true
+        }
+        else
+        {
+            ProModeSwitch.isOn = false
+
+        }
     }
     
     override func didReceiveMemoryWarning() {

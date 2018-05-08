@@ -15,6 +15,8 @@
 		B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */; };
 		B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93E20A0FDC600C03F41 /* RaceSeed.swift */; };
 		B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93F20A0FDC600C03F41 /* RecordSeed.swift */; };
+		D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */; };
+		D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
@@ -61,11 +63,11 @@
 		B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		B007C93E20A0FDC600C03F41 /* RaceSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
 		B007C93F20A0FDC600C03F41 /* RecordSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
+		D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
-		D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -167,8 +169,8 @@
 				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
 				D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */,
 				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
-				D7C854A020994F3800EDAF61 /* SettingsTableViewController.swift */,
-				D78735D9209D02340073C700 /* DistanceUnitTableViewController.swift */,
+				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
+				D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */,
 				D7D9DB4E209124660000EFA7 /* RaceViewController.swift */,
 				D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */,
 				D7D9DB52209124800000EFA7 /* PaceViewController.swift */,
@@ -360,8 +362,10 @@
 				B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */,
 				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
 				B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */,
+				D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */,
 				B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */,
 				D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */,
+				D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KKTK8WHBM5;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KKTK8WHBM5;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
 				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
