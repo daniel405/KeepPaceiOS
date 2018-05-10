@@ -90,4 +90,20 @@ public class RecordModel: NSManagedObject {
         }
         return false
     }
+    
+    //Converts ms to hh:mm:ss or mm:ss.ss
+    func timeTextFormat(ms: Int64) -> String {
+        let msec = Int64(ms / 10) % 100
+        var sec = Int64(ms / 1000)
+        var min = sec / 60
+        let hour = min / 60
+        sec = sec % 60
+        min = min % 60
+        
+        if (hour > 0) {
+            return String(format: "%02d:%02d:%02d", hour, min, min)
+        }
+        
+        return String(format: "%02d:%02d:%02d", hour, min, msec)
+    }
 }
