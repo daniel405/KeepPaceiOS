@@ -26,7 +26,6 @@ class TOSViewController: UIViewController {
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         UIApplication.shared.open(URL(string : "http://www.google.com")!, options: [:], completionHandler: { (status) in
         })
-        
     }
     
     override func didReceiveMemoryWarning() {

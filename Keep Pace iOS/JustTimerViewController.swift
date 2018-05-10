@@ -35,18 +35,6 @@ class JustTimerViewController: UIViewController {
         //Navigation bar title text
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        
-        switch (titleText)
-        {
-        case "Just Grind":
-            self.title = "Grind Pace"
-        case "Just Crunch":
-            self.title = "Crunch Pace"
-        case "Just Race":
-            self.title = "Race Pace"
-        default:
-            print ("default")
-        }
     }
     
     override func didReceiveMemoryWarning() {

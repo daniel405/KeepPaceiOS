@@ -60,6 +60,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if modeType != nil {
             modeSelection.setTitle(modeType, for: .normal)
         }

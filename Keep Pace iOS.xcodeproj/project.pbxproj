@@ -17,6 +17,7 @@
 		B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93F20A0FDC600C03F41 /* RecordSeed.swift */; };
 		D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */; };
 		D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */; };
+		D71DD45A20A39C4500FA2E2F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		B007C93F20A0FDC600C03F41 /* RecordSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
 		D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
+		D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */,
 				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
 				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
+				D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */,
 				D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */,
 				D7D9DB4E209124660000EFA7 /* RaceViewController.swift */,
 				D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */,
@@ -356,6 +359,7 @@
 				B007C93B20A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift in Sources */,
 				B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */,
 				24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */,
+				D71DD45A20A39C4500FA2E2F /* AboutTableViewController.swift in Sources */,
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
 				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
