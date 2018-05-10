@@ -47,7 +47,7 @@ class DatabaseHelper {
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         
-        var test: RaceModel?
+        //var test: RaceModel?
         
         for i in stride(from: 0, to: Races.count, by: 1) {
             if !checkIfIdExists(managedObjectContext: context, _entityName: entityName, idToLookFor: i) {
@@ -67,31 +67,35 @@ class DatabaseHelper {
                     print("Problem with creating RaceModel")
                     continue
                 }
-                seedRecord(raceModel: raceModel)
-                printRaceModel(raceModel: raceModel)
+//                seedRecord(raceModel: raceModel)
+//                printRaceModel(raceModel: raceModel)
                 do {
                     try context.save()
                 } catch {
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
-                test = raceModel
+                //test = raceModel
             }
-
+//            if let raceModelRetrieved = getRaceModel(managedObjectContext: context, _entityName: entityName, idToLookFor: 2) {
+//                print(raceModelRetrieved.mName!)
+//                raceModelRetrieved.mName = "Ducks"
+//                do {
+//                    try context.save()
+//                } catch {
+//                    let nserror = error as NSError
+//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                }
+//            }
         }
         
         //Print worst and best methods
-        if let worstRecord = test?.getWorstRecord() {
-            printRecordModel(recordModel: worstRecord)
-        }
-        if let bestRecord = test?.getBestRecord() {
-             printRecordModel(recordModel:bestRecord)
-        }
-    }
-    
-    //Update passed in RaceData in CoreData
-    func updateRaceModel(raceModel: RaceModel) {
-        
+//        if let worstRecord = test?.getWorstRecord() {
+//            printRecordModel(recordModel: worstRecord)
+//        }
+//        if let bestRecord = test?.getBestRecord() {
+//             printRecordModel(recordModel:bestRecord)
+//        }
     }
     
     //Seeds Race Data with Dummy Record Data
@@ -118,12 +122,13 @@ class DatabaseHelper {
                 continue
             }
             raceModel.addToRecordmodel(recordModel)
-            if i == 1 {
-                raceModel.removeFromRecordmodel(recordModel)
-            }
+            print("Added Record To RaceModel")
+//            if i == 1 {
+//                raceModel.removeFromRecordmodel(recordModel)
+//            }
         }
     }
- 
+        
     //Checks to see if Id exists and returns false if not found and true ifand id was found
     func checkIfIdExists(managedObjectContext: NSManagedObjectContext, _entityName: String, idToLookFor: Int) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: _entityName)
@@ -139,6 +144,24 @@ class DatabaseHelper {
             fatalError("Something went wrong")
         }
         return true
+    }
+    
+    //Finds Race model in CoreData and returns it if it exists
+    func getRaceModel(managedObjectContext: NSManagedObjectContext, _entityName: String, idToLookFor: Int) -> RaceModel? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: _entityName)
+        let predicate = NSPredicate(format: "mId = \(idToLookFor)")
+        fetchRequest.predicate = predicate
+        do {
+            //If result returned 0, there was no such entry in CoreData
+            let result = try managedObjectContext.count(for: fetchRequest)
+            if result != 0 {
+                let raceModel = try managedObjectContext.fetch(fetchRequest) as? [RaceModel]
+                return raceModel?[0]
+            }
+        } catch {
+            fatalError("Something went wrong")
+        }
+        return nil
     }
     
     //Prints a RaceModel
