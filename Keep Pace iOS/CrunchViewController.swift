@@ -22,19 +22,34 @@ class CrunchViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // 457 Steps button action
-    @IBAction func button_457(_ sender: Any) {
-        performSegue(withIdentifier: "fromCrunch", sender: sender)
-    }
-    
     // 437 Steps button action
     @IBAction func button_437(_ sender: Any) {
         performSegue(withIdentifier: "fromCrunch", sender: sender)
     }
     
-    // Sets wildcard button string to "Just Crunch"
+    // 457 Steps button action
+    @IBAction func button_457(_ sender: Any) {
+        performSegue(withIdentifier: "fromCrunch", sender: sender)
+    }
+    
+    // 437 button style
+    @IBOutlet weak var button_style_437: UIButton!
+    
+    // 457 button style
+    @IBOutlet weak var button_style_457: UIButton!
+    
+    // Sets wildcard button string to "JUST STEP" and sets navigation bar title to title of button tapped
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let DestinationViewController : PaceViewController = segue.destination as! PaceViewController
-            DestinationViewController.justWildcardText = "Just Crunch"
+            DestinationViewController.justWildcardText = "JUST STEP"
+        
+        if let button_style_437 = sender as? UIButton
+        {
+            DestinationViewController.titleText = button_style_437.currentTitle!
+        }
+        else
+        {
+            DestinationViewController.titleText = button_style_457.currentTitle!
+        }
     }
 }
