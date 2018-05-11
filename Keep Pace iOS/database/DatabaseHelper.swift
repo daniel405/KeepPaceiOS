@@ -148,7 +148,7 @@ class DatabaseHelper {
     
     //Finds Race model in CoreData and returns it if it exists
     func getRaceModel(idToLookFor: Int) -> RaceModel? {
-        let entityName = "RecordModel"
+        let entityName = "RaceModel"
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
@@ -186,6 +186,7 @@ class DatabaseHelper {
         }
         print("=============")
     }
+
     
     func printRecordModel(recordModel: RecordModel) {
         print("Id: " + String(recordModel.mId))

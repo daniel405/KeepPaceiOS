@@ -9,7 +9,38 @@
 import UIKit
 import CoreData
 
-class BestTimerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BestTimerViewController: UIViewController, UICollectionViewDelegate,
+UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let dbHelper = DatabaseHelper()
+        let raceModel = dbHelper.getRaceModel(idToLookFor: 1)
+        if raceModel != nil {
+            return (raceModel?.getAsInt(variableToGet: "mMarkers"))!
+        }
+        
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
+//
+//              cell.distanceButton = UIButton()
+//    //        cell.distanceButton = buttonArray[indexPath.row]
+//    //        var buttonY: CGFloat = 20
+//    //        buttonY = buttonY + 50
+//            cell.distanceButton.layer.cornerRadius = 10
+//            cell.distanceButton.backgroundColor = UIColor.blue
+//    //        cell.distanceButton.setTitle(String(indexPath.row) + "K", for: .normal)
+//            print("helloworld")
+//            return cell
+//
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
+        //cell.isHidden = false
+        print("helloworld" + String(indexPath.row))
+        return cell
+    }
+    
     
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     
@@ -43,28 +74,26 @@ class BestTimerViewController: UIViewController, UICollectionViewDelegate, UICol
         super.didReceiveMemoryWarning()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
-        
-        let dbHelper = DatabaseHelper()
-        let raceModel = dbHelper.getRaceModel(idToLookFor: 0)
-        
-        return 5
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//
+//
+//
+//
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
-        
-          cell.distanceButton = UIButton()
-//        cell.distanceButton = buttonArray[indexPath.row]
-//        var buttonY: CGFloat = 20
-//        buttonY = buttonY + 50
-        cell.distanceButton.layer.cornerRadius = 10
-        cell.distanceButton.backgroundColor = UIColor.blue
-//        cell.distanceButton.setTitle(String(indexPath.row) + "K", for: .normal)
-        print("helloworld")
-        return cell
-    }
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
+//
+//          cell.distanceButton = UIButton()
+////        cell.distanceButton = buttonArray[indexPath.row]
+////        var buttonY: CGFloat = 20
+////        buttonY = buttonY + 50
+//        cell.distanceButton.layer.cornerRadius = 10
+//        cell.distanceButton.backgroundColor = UIColor.blue
+////        cell.distanceButton.setTitle(String(indexPath.row) + "K", for: .normal)
+//        print("helloworld")
+//        return cell
+//    }
 }
