@@ -147,15 +147,19 @@ class DatabaseHelper {
     }
     
     //Finds Race model in CoreData and returns it if it exists
-    func getRaceModel(managedObjectContext: NSManagedObjectContext, _entityName: String, idToLookFor: Int) -> RaceModel? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: _entityName)
+    func getRaceModel(idToLookFor: Int) -> RaceModel? {
+        let entityName = "RecordModel"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let predicate = NSPredicate(format: "mId = \(idToLookFor)")
         fetchRequest.predicate = predicate
         do {
             //If result returned 0, there was no such entry in CoreData
-            let result = try managedObjectContext.count(for: fetchRequest)
+            let result = try context.count(for: fetchRequest)
             if result != 0 {
-                let raceModel = try managedObjectContext.fetch(fetchRequest) as? [RaceModel]
+                let raceModel = try context.fetch(fetchRequest) as? [RaceModel]
                 return raceModel?[0]
             }
         } catch {
