@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
-class BestTimerViewController: UIViewController {
-
+class BestTimerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     let modeType = UserDefaults.standard.string(forKey: "modeType")
-
+    
     var titleText : String = ""
+    var buttons = [UIButton]()
     
     @IBOutlet weak var pauseButtonStyle: UIButton!
     @IBOutlet weak var resetButtonStyle: UIButton!
@@ -40,5 +42,29 @@ class BestTimerViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        
+        
+        let dbHelper = DatabaseHelper()
+        let raceModel = dbHelper.getRaceModel(idToLookFor: 0)
+        
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
+        
+          cell.distanceButton = UIButton()
+//        cell.distanceButton = buttonArray[indexPath.row]
+//        var buttonY: CGFloat = 20
+//        buttonY = buttonY + 50
+        cell.distanceButton.layer.cornerRadius = 10
+        cell.distanceButton.backgroundColor = UIColor.blue
+//        cell.distanceButton.setTitle(String(indexPath.row) + "K", for: .normal)
+        print("helloworld")
+        return cell
+    }
 }

@@ -18,6 +18,7 @@
 		D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */; };
 		D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */; };
 		D71DD45A20A39C4500FA2E2F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */; };
+		D71DD45C20A63D6000FA2E2F /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */; };
 		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
 		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
 		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
 		D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
 		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
 				D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */,
 				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
+				D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */,
 				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
 				D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */,
 				D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */,
@@ -351,6 +354,7 @@
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
 				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
+				D71DD45C20A63D6000FA2E2F /* ButtonCollectionViewCell.swift in Sources */,
 				B007C93920A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift in Sources */,
 				D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */,
 				D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */,
