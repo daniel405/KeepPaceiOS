@@ -21,7 +21,6 @@ class PaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Navigation bar title text
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
@@ -53,5 +52,21 @@ class PaceViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toJustTimer")
+        {
+            let DestinationViewController : JustTimerViewController = segue.destination as! JustTimerViewController
+            DestinationViewController.raceType = titleText
+        }
+        else if (segue.identifier == "toBestTimer")
+        {
+            let DestinationViewController : BestTimerViewController = segue.destination as! BestTimerViewController
+            DestinationViewController.raceType = titleText
+        }
     }
 }

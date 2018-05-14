@@ -18,13 +18,13 @@ class DatabaseHelper {
     
     //Dummy Data for seeding race
     let Races: [RaceSeed] = [
-        RaceSeed(_Name: "5K", _Distance: 5.0, _Markers: 5),
-        RaceSeed(_Name: "10K", _Distance: 10.0, _Markers: 10),
-        RaceSeed(_Name: "Half Marathon", _Distance: 21.1, _Markers: 21),
-        RaceSeed(_Name: "Full Marathon", _Distance: 42.2, _Markers: 42),
-        RaceSeed(_Name: "Grouse Grind", _Distance: 2.2, _Markers: 4),
-        RaceSeed(_Name: "457 Steps", _Distance: 0.29, _Markers: 10),
-        RaceSeed(_Name: "437 Steps", _Distance: 0.3, _Markers: 9)
+        RaceSeed(_Name: "5K", _Distance: 5.0, _Markers: 4),
+        RaceSeed(_Name: "10K", _Distance: 10.0, _Markers: 9),
+        RaceSeed(_Name: "Half Marathon", _Distance: 21.1, _Markers: 20),
+        RaceSeed(_Name: "Full Marathon", _Distance: 42.2, _Markers: 41),
+        RaceSeed(_Name: "Grouse Grind", _Distance: 2.2, _Markers: 3),
+        RaceSeed(_Name: "437 Steps", _Distance: 0.3, _Markers: 8),
+        RaceSeed(_Name: "457 Steps", _Distance: 0.29, _Markers: 9)
     ]
     
     //Dummy Data for seeding race
@@ -148,7 +148,7 @@ class DatabaseHelper {
     
     //Finds Race model in CoreData and returns it if it exists
     func getRaceModel(idToLookFor: Int) -> RaceModel? {
-        let entityName = "RecordModel"
+        let entityName = "RaceModel"
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
@@ -186,6 +186,7 @@ class DatabaseHelper {
         }
         print("=============")
     }
+
     
     func printRecordModel(recordModel: RecordModel) {
         print("Id: " + String(recordModel.mId))

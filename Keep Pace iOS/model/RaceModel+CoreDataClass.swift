@@ -197,4 +197,17 @@ public class RaceModel: NSManagedObject {
             self.addToRecordmodel(recordModelToAdd)
         }
     }
+    
+    //Returns variables as int
+    func getAsInt(variableToGet: String) -> Int {
+        if (variableToGet.caseInsensitiveCompare("mTime") == ComparisonResult.orderedSame) {
+            return Int(mTime)
+        } else if (variableToGet.caseInsensitiveCompare("mId") == ComparisonResult.orderedSame) {
+            return Int(mId)
+        } else if (variableToGet.caseInsensitiveCompare("mMarkers") == ComparisonResult.orderedSame) {
+            return Int(mMarkers)
+        }
+        
+        return 0
+    }
 }
