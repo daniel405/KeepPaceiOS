@@ -100,7 +100,7 @@ class DatabaseHelper {
     
     //Seeds Race Data with Dummy Record Data
     func seedRecord(raceModel: RaceModel) {
-        let entityName = "RecordModel"
+        let entityName = "RaceModel"
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)

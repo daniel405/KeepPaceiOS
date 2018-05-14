@@ -998,9 +998,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-1w-DiR">
-                                <rect key="frame" x="0.0" y="650" width="375" height="101"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-1w-DiR">
+                                <rect key="frame" x="0.0" y="642" width="377" height="100"/>
+                                <color key="backgroundColor" red="0.057977494099999999" green="0.83133767540000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Bpa-WQ-4D6"/>
+                                    <constraint firstAttribute="width" constant="400" id="fzp-0o-zGl"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cT6-lv-XmR">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1009,15 +1013,20 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCollectionViewCell" id="CpA-rH-zSz" customClass="ButtonCollectionViewCell" customModule="Keep_Pace_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.66666666666666663" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-6N-mNU">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-6N-mNU">
                                                     <rect key="frame" x="27" y="35" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -1036,7 +1045,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-cB-AP3">
-                                <rect key="frame" x="42.666666666666657" y="475" width="290" height="100"/>
+                                <rect key="frame" x="43.666666666666657" y="475" width="290" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Finish Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOt-m5-2PU">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="36"/>
@@ -1070,16 +1079,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="chc-eb-1a9">
-                                <rect key="frame" x="225.99999999999997" y="274" width="113.66666666666666" height="65"/>
+                                <rect key="frame" x="226.00000000000003" y="274" width="114.33333333333334" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPI-3E-jOn">
-                                        <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114.33333333333333" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGx-ax-0li">
-                                        <rect key="frame" x="0.0" y="35" width="113.66666666666667" height="30"/>
+                                        <rect key="frame" x="0.0" y="35" width="114.33333333333333" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1087,7 +1096,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-QI-Ow4">
-                                <rect key="frame" x="32.666666666666657" y="389" width="310" height="34"/>
+                                <rect key="frame" x="33.666666666666657" y="389" width="310" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4na-K5-knn">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
@@ -1131,7 +1140,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-rz-7sM">
-                                <rect key="frame" x="92.999999999999986" y="137" width="189.66666666666663" height="100"/>
+                                <rect key="frame" x="93.999999999999986" y="137" width="189.66666666666663" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-rD-sWG">
                                         <rect key="frame" x="0.0" y="0.0" width="189.66666666666666" height="36"/>
@@ -1151,6 +1160,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LsN-rz-7sM" firstAttribute="centerX" secondItem="WRc-Aq-ked" secondAttribute="centerX" id="AQM-Hr-dJb"/>
+                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="trailing" secondItem="P2s-bX-vB0" secondAttribute="trailing" id="BEo-P6-pPv"/>
                             <constraint firstItem="chc-eb-1a9" firstAttribute="leading" secondItem="I9t-55-Xyl" secondAttribute="trailing" constant="58" id="VHV-Ba-sop"/>
                             <constraint firstItem="9L5-cB-AP3" firstAttribute="top" secondItem="AP6-QI-Ow4" secondAttribute="bottom" constant="52" id="bZA-5m-yEQ"/>
                             <constraint firstItem="I9t-55-Xyl" firstAttribute="top" secondItem="LsN-rz-7sM" secondAttribute="bottom" constant="37" id="cf5-B3-seg"/>
@@ -1158,6 +1168,7 @@
                             <constraint firstItem="Rcc-1w-DiR" firstAttribute="top" secondItem="9L5-cB-AP3" secondAttribute="bottom" constant="67" id="cjH-it-HlV"/>
                             <constraint firstItem="LsN-rz-7sM" firstAttribute="top" secondItem="P2s-bX-vB0" secondAttribute="top" constant="46" id="cpj-fL-Rc5"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="top" secondItem="I9t-55-Xyl" secondAttribute="bottom" constant="50" id="gCQ-bv-kBO"/>
+                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="leading" secondItem="P2s-bX-vB0" secondAttribute="leading" id="k2B-Ab-39D"/>
                             <constraint firstItem="I9t-55-Xyl" firstAttribute="leading" secondItem="P2s-bX-vB0" secondAttribute="leading" constant="22" id="kZJ-Qp-gEX"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="top" secondItem="chc-eb-1a9" secondAttribute="bottom" constant="50" id="lR0-ei-thG"/>
                             <constraint firstItem="P2s-bX-vB0" firstAttribute="trailing" secondItem="chc-eb-1a9" secondAttribute="trailing" constant="35.670000000000002" id="vvU-Er-OXy"/>
