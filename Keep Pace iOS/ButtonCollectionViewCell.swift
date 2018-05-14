@@ -9,5 +9,5 @@
 import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var distanceButton: UIButton!
+    @IBOutlet weak var distanceButton: UILabel!
 }

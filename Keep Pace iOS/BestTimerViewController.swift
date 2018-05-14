@@ -11,9 +11,21 @@ import CoreData
 
 class BestTimerViewController: UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource {
+    
+    let unitType = UserDefaults.standard.string(forKey: "unitType")
+    let modeType = UserDefaults.standard.string(forKey: "modeType")
+    var raceType : String = ""
     var markersNum = 0
-    var currentMarker = 0
+    var grouseGrindMarkers = ["1/4", "1/2", "3/4"]
+    var stepsMarkers = ["50", "100", "150", "200", "250", "300", "350", "400", "450"]
+    
+    @IBOutlet weak var pauseButtonStyle: UIButton!
+    @IBOutlet weak var resetButtonStyle: UIButton!
+    @IBOutlet weak var startButtonStyle: UIButton!
+    @IBOutlet weak var saveButtonStyle: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
 
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let dbHelper = DatabaseHelper()
         var raceModel = dbHelper.getRaceModel(idToLookFor: 0)
@@ -23,9 +35,9 @@ UICollectionViewDataSource {
         case "GROUSE GRIND":
             raceModel = dbHelper.getRaceModel(idToLookFor: 4)
         case "437 STEPS (LEFT)":
-            raceModel = dbHelper.getRaceModel(idToLookFor: 6)
-        case "457 STEPS (RIGHT)":
             raceModel = dbHelper.getRaceModel(idToLookFor: 5)
+        case "457 STEPS (RIGHT)":
+            raceModel = dbHelper.getRaceModel(idToLookFor: 6)
         case "5K":
             raceModel = dbHelper.getRaceModel(idToLookFor: 0)
         case "10K":
@@ -38,99 +50,117 @@ UICollectionViewDataSource {
             raceModel = dbHelper.getRaceModel(idToLookFor: 0)
         }
         
-        markersNum = (raceModel?.getAsInt(variableToGet: "mMarkers"))! + 1
         
         if raceModel != nil {
-            return (raceModel?.getAsInt(variableToGet: "mMarkers"))! + 1
+            if unitType == "M"
+            {
+                markersNum = Int(ceil(Double((raceModel?.getAsInt(variableToGet: "mMarkers"))!) / 1.6))
+                return markersNum
+            }
+            else
+            {
+                markersNum = (raceModel?.getAsInt(variableToGet: "mMarkers"))! + 1
+                return markersNum
+            }
         }
         return 0
     }
-    
-    var started = false
-    var finished = false
-    
-    @IBOutlet weak var collectionView: UICollectionView!
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
-        
         //Round buttons
-        cell.distanceButton.layer.cornerRadius = cell.distanceButton.frame.size.width / 2
-        
-        cell.distanceButton.tag = indexPath.row
-        cell.distanceButton.addTarget(self, action: #selector(BestTimerViewController.btnTapped), for: .touchUpInside)
-        
-
-        switch (indexPath.row)
+        cell.layer.cornerRadius = cell.frame.size.width / 2
+        switch (raceType)
         {
-        case 0:
-            cell.distanceButton.setTitle("START", for: .normal)
-            cell.center.x = self.view.center.x
-        case markersNum - 1:
-            cell.distanceButton.setTitle("SAVE", for: .normal)
-            //cell.isHidden = true
+        case "GROUSE GRIND":
+            if indexPath.row < grouseGrindMarkers.count
+            {
+                cell.distanceButton.text = grouseGrindMarkers[indexPath.row]
+            }
+        case "437 STEPS (LEFT)":
+            print(indexPath.row)
+            if indexPath.row < stepsMarkers.count - 1
+            {
+                cell.distanceButton.text = stepsMarkers[indexPath.row]
+            }
+        case "457 STEPS (RIGHT)":
+            print(indexPath.row)
 
-        case markersNum - 2:
-            cell.distanceButton.setTitle("FINISH", for: .normal)
-            //cell.isHidden = true
+            if indexPath.row < stepsMarkers.count
+            {
+                cell.distanceButton.text = stepsMarkers[indexPath.row]
+            }
         default:
-            cell.distanceButton.setTitle(String(indexPath.row) + "K", for: .normal)
-           // cell.isHidden = true
+            if unitType == "M"
+            {
+                if indexPath.row < markersNum
+                {
+                    cell.distanceButton.text = String(indexPath.row + 1) + "MI"
+                }
+            }
+            else
+            {
+                cell.distanceButton.text = String(indexPath.row + 1) + "K"
+            }
+        }
+        if indexPath.row == markersNum - 1
+        {
+            cell.distanceButton.text = "FINISH"
         }
         
-        cell.isHidden = false
-        if started == true && cell.distanceButton.currentTitle! == "START"
-        {
-            cell.isHidden = true
-        }
-//        if finished == true && cell.distanceButton.currentTitle! != "SAVE"
-//        {
-//            cell.isHidden = true
-//        }
-
         return cell
     }
     
-    @objc func btnTapped(_ sender : UIButton) {
-        let cell = collectionView.cellForItem(at: IndexPath(item: sender.tag, section: 0))
-        let distanceButton = sender
-        if distanceButton.currentTitle! == "START"
+    // On distance marker select function
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == markersNum - 1
         {
-            started = true
-            cell?.isHidden = true
+            collectionView.isHidden = true
+            saveButtonStyle.isHidden = false
         }
         
-        if distanceButton.currentTitle! == "FINISH"
-        {   
-            finished = true
-            cell?.isHidden = true
-            self.collectionView.scrollToItem(at:IndexPath(item: markersNum - 1, section: 0), at: .centeredHorizontally, animated: false)
+        if indexPath.row != markersNum - 1
+        {
+            self.collectionView?.scrollToItem(at:IndexPath(item: indexPath.row + 1, section: 0), at: .centeredHorizontally, animated: true)
         }
-        collectionView.reloadData()
     }
-
-    @IBAction func distanceMarkerButton(_ sender: Any) {
-
+    
+    //Start timer
+    @IBAction func startButton(_ sender: Any) {
+        startButtonStyle.isHidden = true
+        collectionView.isHidden = false
     }
-
-
-    let modeType = UserDefaults.standard.string(forKey: "modeType")
     
-    var raceType : String = ""
-    var buttons = [UIButton]()
-    
-    @IBOutlet weak var pauseButtonStyle: UIButton!
-    @IBOutlet weak var resetButtonStyle: UIButton!
-    
+    // Pause timer
     @IBAction func pauseButton(_ sender: Any) {
+        if pauseButtonStyle.currentTitle == "PAUSE"
+        {
+            pauseButtonStyle.setTitle("RESUME", for: .normal)
+        }
+        else
+        {
+            pauseButtonStyle.setTitle("PAUSE", for: .normal)
+        }
     }
+    
+    // Reset timer
     @IBAction func resetButton(_ sender: Any) {
     }
     
     override func viewDidLoad() {
-        self.collectionView.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
+        // Hides collectionView and "SAVE" button
+        collectionView.isHidden = true
+        saveButtonStyle.isHidden = true
+        
+        // Rounds "START" and "SAVE" buttons
+        startButtonStyle.layer.cornerRadius = startButtonStyle.frame.size.width / 2
+        saveButtonStyle.layer.cornerRadius = saveButtonStyle.frame.size.width / 2
+
+        // Hides "PAUSE" button on Pro Mode
         if modeType == "Pro Mode"
         {
             pauseButtonStyle.isHidden = true
