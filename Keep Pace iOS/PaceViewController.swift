@@ -54,4 +54,11 @@ class PaceViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let DestinationViewController : BestTimerViewController = segue.destination as! BestTimerViewController
+        DestinationViewController.raceType = titleText
+       // DestinationViewController2.raceType = titleText
+
+    }
 }

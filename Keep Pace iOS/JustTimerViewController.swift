@@ -12,7 +12,7 @@ class JustTimerViewController: UIViewController {
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     
     var titleText : String = ""
-    
+
     @IBOutlet weak var pauseButtonStyle: UIButton!
     @IBOutlet weak var resetButtonStyle: UIButton!
     

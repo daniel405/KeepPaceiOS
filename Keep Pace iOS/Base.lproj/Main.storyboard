@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A85-oC-aQr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eiQ-Jx-tQV">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -998,47 +998,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-1w-DiR">
-                                <rect key="frame" x="0.0" y="642" width="375" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.28222674468640896" blue="0.55429532988502728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DB1-hu-C2O"/>
-                                    <constraint firstAttribute="width" constant="375" id="dw6-uf-bbi"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="flJ-zE-lFG">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCollectionViewCell" id="CpA-rH-zSz" customClass="ButtonCollectionViewCell" customModule="Keep_Pace_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="25" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-6N-mNU">
-                                                    <rect key="frame" x="27" y="35" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="g5b-6N-mNU" firstAttribute="centerY" secondItem="CpA-rH-zSz" secondAttribute="centerY" id="sEu-Mi-hb5"/>
-                                            <constraint firstItem="g5b-6N-mNU" firstAttribute="centerX" secondItem="CpA-rH-zSz" secondAttribute="centerX" id="uAs-Xt-9ib"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="distanceButton" destination="g5b-6N-mNU" id="WRJ-Qr-Zkx"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="noB-Rg-BKk" id="jM9-H8-HMQ"/>
-                                    <outlet property="delegate" destination="noB-Rg-BKk" id="ot7-O8-f3m"/>
-                                </connections>
-                            </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-cB-AP3">
                                 <rect key="frame" x="42.666666666666657" y="475" width="290" height="100"/>
                                 <subviews>
@@ -1111,6 +1070,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pauseButton:" destination="0x4-yC-hA8" eventType="touchUpInside" id="FbH-2e-7Uu"/>
+                                            <action selector="pauseButton:" destination="noB-Rg-BKk" eventType="touchUpInside" id="Qmz-st-AYE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzf-YV-0GJ">
@@ -1129,6 +1089,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="resetButton:" destination="noB-Rg-BKk" eventType="touchUpInside" id="byJ-hN-tJJ"/>
                                             <action selector="resetButton:" destination="0x4-yC-hA8" eventType="touchUpInside" id="z1a-Pw-84e"/>
                                         </connections>
                                     </button>
@@ -1151,25 +1112,79 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-1w-DiR">
+                                <rect key="frame" x="0.0" y="633" width="375" height="145"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="flJ-zE-lFG">
+                                    <size key="itemSize" width="93" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCollectionViewCell" id="CpA-rH-zSz" customClass="ButtonCollectionViewCell" customModule="Keep_Pace_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="26" width="93" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-6N-mNU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                                    <color key="backgroundColor" red="0.12019533659999999" green="0.69231903549999996" blue="0.9999416471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="distanceMarkerButton:" destination="noB-Rg-BKk" eventType="touchUpInside" id="xuJ-be-zlm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="g5b-6N-mNU" firstAttribute="top" secondItem="CpA-rH-zSz" secondAttribute="top" id="GUE-YI-jcv"/>
+                                            <constraint firstAttribute="bottom" secondItem="g5b-6N-mNU" secondAttribute="bottom" id="Lcg-Wa-Sae"/>
+                                            <constraint firstItem="g5b-6N-mNU" firstAttribute="leading" secondItem="CpA-rH-zSz" secondAttribute="leading" id="Tmg-Bf-TuZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="g5b-6N-mNU" secondAttribute="trailing" id="oDo-cx-gER"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="distanceButton" destination="g5b-6N-mNU" id="WRJ-Qr-Zkx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="noB-Rg-BKk" id="jM9-H8-HMQ"/>
+                                    <outlet property="delegate" destination="noB-Rg-BKk" id="ot7-O8-f3m"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="trailing" secondItem="P2s-bX-vB0" secondAttribute="trailing" id="6HK-mF-NEc"/>
+                            <constraint firstItem="P2s-bX-vB0" firstAttribute="bottom" secondItem="Rcc-1w-DiR" secondAttribute="bottom" id="A2l-i4-Sc8"/>
                             <constraint firstItem="LsN-rz-7sM" firstAttribute="centerX" secondItem="WRc-Aq-ked" secondAttribute="centerX" id="AQM-Hr-dJb"/>
                             <constraint firstItem="chc-eb-1a9" firstAttribute="leading" secondItem="I9t-55-Xyl" secondAttribute="trailing" constant="58" id="VHV-Ba-sop"/>
                             <constraint firstItem="9L5-cB-AP3" firstAttribute="top" secondItem="AP6-QI-Ow4" secondAttribute="bottom" constant="52" id="bZA-5m-yEQ"/>
                             <constraint firstItem="I9t-55-Xyl" firstAttribute="top" secondItem="LsN-rz-7sM" secondAttribute="bottom" constant="37" id="cf5-B3-seg"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="centerY" secondItem="WRc-Aq-ked" secondAttribute="centerY" id="cib-xh-oBy"/>
-                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="top" secondItem="9L5-cB-AP3" secondAttribute="bottom" constant="67" id="cjH-it-HlV"/>
                             <constraint firstItem="LsN-rz-7sM" firstAttribute="top" secondItem="P2s-bX-vB0" secondAttribute="top" constant="46" id="cpj-fL-Rc5"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="top" secondItem="I9t-55-Xyl" secondAttribute="bottom" constant="50" id="gCQ-bv-kBO"/>
                             <constraint firstItem="I9t-55-Xyl" firstAttribute="leading" secondItem="P2s-bX-vB0" secondAttribute="leading" constant="22" id="kZJ-Qp-gEX"/>
+                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="top" secondItem="9L5-cB-AP3" secondAttribute="bottom" constant="58" id="ke7-2C-cBM"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="top" secondItem="chc-eb-1a9" secondAttribute="bottom" constant="50" id="lR0-ei-thG"/>
                             <constraint firstItem="P2s-bX-vB0" firstAttribute="trailing" secondItem="chc-eb-1a9" secondAttribute="trailing" constant="35.670000000000002" id="vvU-Er-OXy"/>
                             <constraint firstItem="AP6-QI-Ow4" firstAttribute="centerX" secondItem="WRc-Aq-ked" secondAttribute="centerX" id="wQo-Zp-nRh"/>
+                            <constraint firstItem="Rcc-1w-DiR" firstAttribute="leading" secondItem="P2s-bX-vB0" secondAttribute="leading" id="yVW-2i-vR4"/>
                             <constraint firstItem="9L5-cB-AP3" firstAttribute="centerX" secondItem="WRc-Aq-ked" secondAttribute="centerX" id="zg6-pz-5ZI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P2s-bX-vB0"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Rcc-1w-DiR" id="PaR-M2-RJB"/>
+                        <outlet property="pauseButtonStyle" destination="4na-K5-knn" id="3I9-hI-xd1"/>
+                        <outlet property="resetButtonStyle" destination="Pzf-YV-0GJ" id="ONF-mh-7QG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlP-Se-u5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
