@@ -37,7 +37,7 @@ class AboutTableViewController: UITableViewController {
         //        UIApplication.shared.openURL(url)
     }
     
-    // Function to send an email to Keep Pace.
+    // Function to send an email t  o Keep Pace.
     @objc func contactUs(sender:UITapGestureRecognizer) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
