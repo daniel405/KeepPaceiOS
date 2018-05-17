@@ -162,7 +162,7 @@ public class RaceModel: NSManagedObject {
         return String(count) + "K"
     }
     
-    //Converts ms to hh:mm:ss or mm:ss.ss
+    //Converts ms to hh:mm:ss or mm:ss.ms
     func timeTextFormat(ms: Int64) -> String {
         let msec = Int64(ms / 10) % 100
         var sec = Int64(ms / 1000)
@@ -172,7 +172,7 @@ public class RaceModel: NSManagedObject {
         min = min % 60
         
         if (hour > 0) {
-            return String(format: "%02d:%02d:%02d", hour, min, min)
+            return String(format: "%02d:%02d:%02d", hour, min, sec)
         }
         
         return String(format: "%02d:%02d:%02d", hour, min, msec)

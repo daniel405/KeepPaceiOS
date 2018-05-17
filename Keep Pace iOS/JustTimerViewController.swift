@@ -81,14 +81,11 @@ UICollectionViewDataSource {
                 cell.distanceButton.text = grouseGrindMarkers[indexPath.row]
             }
         case "437 STEPS (LEFT)":
-            print(indexPath.row)
             if indexPath.row < stepsMarkers.count - 1
             {
                 cell.distanceButton.text = stepsMarkers[indexPath.row]
             }
-        case "457 STEPS (RIGHT)":
-            print(indexPath.row)
-            
+        case "457 STEPS (RIGHT)":           
             if indexPath.row < stepsMarkers.count
             {
                 cell.distanceButton.text = stepsMarkers[indexPath.row]
