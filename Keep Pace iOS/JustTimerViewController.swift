@@ -15,7 +15,6 @@ class JustTimerViewController: UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource {
     var timer = Timer()
     var counter = 0.0
-    
     let unitType = UserDefaults.standard.string(forKey: "unitType")
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     var raceType : String = ""
@@ -27,8 +26,12 @@ UICollectionViewDataSource {
     var raceModel = RaceModel()
     var recordModel = RecordModel()
     var started = false
+    var saved = false
     var grouseGrindMarkers = ["1/4", "1/2", "3/4"]
     var stepsMarkers = ["50", "100", "150", "200", "250", "300", "350", "400", "450"]
+    var effect:UIVisualEffect!
+    let date = Date()
+    let formatter = DateFormatter()
     
     @IBOutlet weak var pauseButtonStyle: UIButton!
     @IBOutlet weak var resetButtonStyle: UIButton!
@@ -38,6 +41,8 @@ UICollectionViewDataSource {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var estimatedTimeLabel: UILabel!
     @IBOutlet weak var currentPaceLabel: UILabel!
+    @IBOutlet var addItemView: UIView!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -240,6 +245,11 @@ UICollectionViewDataSource {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         pauseButtonStyle.isEnabled = false
+        effect = visualEffectView.effect
+        visualEffectView.isHidden = true
+        addItemView.layer.cornerRadius = 5
+        formatter.dateFormat = "yyyy-MM-dd"
+
         
         switch (raceType)
         {
@@ -299,18 +309,63 @@ UICollectionViewDataSource {
     
     
     @IBAction func save(_ sender: Any) {
-        
+        animateIn()
+    }
+    
+    @IBAction func finalSaveButton(_ sender: Any) {
         saveButtonStyle.isEnabled = false
-        let record = dbHelper.createRecord(averagePace: pace, time: Int64(counter), date: "2018-01-01")
-        if record != nil {
-            raceModel.removeAndAdd(recordModelToAdd: record!)
-            print("please baby jesus")
-            dbHelper.save()
+        if saved == false
+        {
+            saved = true
+            let result = formatter.string(from: date)
+            let record = dbHelper.createRecord(averagePace: pace, time: Int64(counter), date: result)
+            if record != nil {
+                raceModel.removeAndAdd(recordModelToAdd: record!)
+                dbHelper.save()
+            }
         }
+    }
+
+    @IBAction func finalCancelButton(_ sender: Any) {
+        animateOut()
+        saveButtonStyle.isEnabled = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    func animateIn() {
+        self.view.addSubview(addItemView)
+        addItemView.center = self.view.center
+        
+        addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        addItemView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            //self.visualEffectView.effect = self.effect
+            self.visualEffectView.isHidden = false
+            
+            self.addItemView.alpha = 1
+            self.addItemView.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    
+    func animateOut () {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.addItemView.alpha = 0
+            
+            self.visualEffectView.effect = nil
+            
+        }) { (success:Bool) in
+            self.addItemView.removeFromSuperview()
+        }
+    }
+    
 }
+
 
