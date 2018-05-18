@@ -30,8 +30,11 @@ class DatabaseHelper {
     //Dummy Data for seeding race
     let Records: [RecordSeed] = [
         RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "2018-01-RON"),
-        RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "2018-02-02"),
-        RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "2018-03-03")
+        RecordSeed(_AveragePace: 9.1, _Time: 111111111, _Date: "2018-02-02"),
+        RecordSeed(_AveragePace: 2.1, _Time: 111112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 11111112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 11112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 113441112, _Date: "2018-03-03")
     ]
     
     
@@ -67,37 +70,25 @@ class DatabaseHelper {
                     print("Problem with creating RaceModel")
                     continue
                 }
-                
                 seedRecord(raceModel: raceModel)
                 printRaceModel(raceModel: raceModel)
-                
-                do {
-                    try context.save()
-                } catch {
-                    let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                }
+                save()
                 //test = raceModel
             }
-//            if let raceModelRetrieved = getRaceModel(managedObjectContext: context, _entityName: entityName, idToLookFor: 2) {
-//                print(raceModelRetrieved.mName!)
-//                raceModelRetrieved.mName = "Ducks"
-//                do {
-//                    try context.save()
-//                } catch {
-//                    let nserror = error as NSError
-//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//                }
-//            }
         }
         
-        //Print worst and best methods
-//        if let worstRecord = test?.getWorstRecord() {
-//            printRecordModel(recordModel: worstRecord)
-//        }
-//        if let bestRecord = test?.getBestRecord() {
-//             printRecordModel(recordModel:bestRecord)
-//        }
+    }
+    
+    func save() {
+        do {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            try context.save()
+            print("Saved Changes")
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
     
     //Seeds Race Data with Dummy Record Data
@@ -195,5 +186,27 @@ class DatabaseHelper {
         print("Average: " + String(recordModel.mAveragePace))
         print("Time: " + String(recordModel.mTime))
         print("Date: " + recordModel.mDate!)
+    }
+    
+    //creates a Record
+    func createRecord(averagePace: Double, time: Int64, date: String) -> RecordModel? {
+        let entityName = "RecordModel"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        let recordModel = RecordModel(entity: entity!, insertInto: context)
+        do {
+            try recordModel.validateAndInsert(value: averagePace, forKey: "mAveragePace")
+            try recordModel.validateAndInsert(value: time, forKey: "mTime")
+            try recordModel.validateAndInsert(value: date, forKey: "mDate")
+            return recordModel
+        } catch RaceModel.RaceModelError.objectIsNil(let msg){
+            print(msg)
+        } catch RaceModel.RaceModelError.invalidInput(let msg) {
+            print(msg)
+        } catch {
+            print("Problem with creating RecordModel")
+        }
+        return nil
     }
 }

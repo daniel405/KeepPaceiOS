@@ -20,9 +20,10 @@ UICollectionViewDataSource {
     var markersNum = 0
     var currentPace = 0.0
     var estimatedFinishTime = 0.0
+    var pace = 0.0
+    var dbHelper = DatabaseHelper()
     var raceModel = RaceModel()
     var recordModel = RecordModel()
-    var dbHelper = DatabaseHelper()
     var started = false
     var grouseGrindMarkers = ["1/4", "1/2", "3/4"]
     var stepsMarkers = ["50", "100", "150", "200", "250", "300", "350", "400", "450"]
@@ -119,7 +120,7 @@ UICollectionViewDataSource {
         
         // Update current pace
         currentPace = (Double(indexPath.row + 1) / counter)
-        let pace = currentPace * 1000.0 * 60.0 * 60.0
+        pace = currentPace * 1000.0 * 60.0 * 60.0
         currentPaceLabel.text = String(format: "%.2f", pace)
         
         // Update Estimated finish time
@@ -266,6 +267,16 @@ UICollectionViewDataSource {
             pauseButtonStyle.isHidden = true
             pauseButtonStyle.isEnabled = false
             resetButtonStyle.center.x = self.view.center.x
+        }
+    }
+    
+    
+    @IBAction func save(_ sender: Any) {
+        let record = dbHelper.createRecord(averagePace: pace, time: Int64(counter), date: "2018-01-01")
+        if record != nil {
+            raceModel.removeAndAdd(recordModelToAdd: record!)
+            print("please baby jesus")
+            dbHelper.save()
         }
     }
     

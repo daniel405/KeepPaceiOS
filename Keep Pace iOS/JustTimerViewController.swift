@@ -32,7 +32,6 @@ UICollectionViewDataSource {
     @IBOutlet weak var startButtonStyle: UIButton!
     @IBOutlet weak var saveButtonStyle: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var bestRecordLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var estimatedTimeLabel: UILabel!
     @IBOutlet weak var currentPaceLabel: UILabel!
@@ -226,12 +225,6 @@ UICollectionViewDataSource {
             raceModel = dbHelper.getRaceModel(idToLookFor: 3)!
         default:
             raceModel = dbHelper.getRaceModel(idToLookFor: 0)!
-        }
-        
-        //Sets best time label
-        let bestTime = raceModel.getBestRecord()
-        if bestTime != nil {
-            bestRecordLabel.text = bestTime?.mTime.description
         }
         
         if raceType == "GROUSE GRIND"
