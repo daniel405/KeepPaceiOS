@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+
+
 class JustTimerViewController: UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource {
     var timer = Timer()
@@ -20,9 +22,10 @@ UICollectionViewDataSource {
     var markersNum = 0
     var currentPace = 0.0
     var estimatedFinishTime = 0.0
+    var pace = 0.0
+    var dbHelper = DatabaseHelper()
     var raceModel = RaceModel()
     var recordModel = RecordModel()
-    var dbHelper = DatabaseHelper()
     var started = false
     var grouseGrindMarkers = ["1/4", "1/2", "3/4"]
     var stepsMarkers = ["50", "100", "150", "200", "250", "300", "350", "400", "450"]
@@ -116,32 +119,45 @@ UICollectionViewDataSource {
             self.collectionView?.scrollToItem(at:IndexPath(item: indexPath.row + 1, section: 0), at: .centeredHorizontally, animated: true)
         }
         
-        // Update current pace
-        currentPace = (Double(indexPath.row + 1) / counter)
-        let pace = currentPace * 1000.0 * 60.0 * 60.0
-        currentPaceLabel.text = String(format: "%.2f", pace)
+        currentPace = getCurrentPace(currentMarker: indexPath.row + 1, currentTime: counter)
+        pace = currentPace * 1000.0 * 60.0 * 60.0
         
-        // Update Estimated finish time
+        if unitType == "M" && (raceType == "1/2 MARATHON" || raceType == "FULL MARATHON")
+        {
+            currentPaceLabel.text = String(format: "%.2f", pace) + " mi/h"
+        }
+        else
+        {
+            currentPaceLabel.text = String(format: "%.2f", pace) + " km/h"
+        }
+        
+        estimatedTimeLabel.text = timeTextFormat(pace: getEstimatedTime(pace: currentPace))
+        
+    }
+    
+    
+    func getCurrentPace(currentMarker: Int, currentTime: Double) -> Double {
+        let currentDistance = currentMarker
+        return Double(currentDistance) / currentTime
+    }
+    
+    func getEstimatedTime(pace: Double) -> Double {
         if unitType == "M"
         {
             if raceType == "HALF MARATHON"
             {
-                estimatedFinishTime = 13.1 / currentPace
+                estimatedFinishTime = 13.1 / pace
             }
             else if raceType == "FULL MARATHON"
             {
-                estimatedFinishTime = 26.2 / currentPace
+                estimatedFinishTime = 26.2 / pace
             }
         }
         else
         {
-            estimatedFinishTime = raceModel.mDistance / currentPace
+            estimatedFinishTime = raceModel.mDistance / pace
         }
-        
-        estimatedTimeLabel.text = timeTextFormat(pace: raceModel.mDistance / currentPace)
-        //print(timeTextFormat(pace: raceModel.mDistance / currentPace))
-        
-        // estimatedTimeLabel.text = TimeText(pace: estimatedFinishTime)
+        return estimatedFinishTime
     }
     
     // Start timer
@@ -152,6 +168,8 @@ UICollectionViewDataSource {
         collectionView.isHidden = false
         pauseButtonStyle.isEnabled = true
     }
+    
+    
     
     @objc func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
@@ -177,10 +195,6 @@ UICollectionViewDataSource {
         return String(format: "%02d:%02d:%02d", min, sec, msec)
     }
     
-    
-    
-    
-    
     // Pause timer
     @IBAction func pauseButton(_ sender: Any) {
         if pauseButtonStyle.currentTitle == "PAUSE"
@@ -200,6 +214,26 @@ UICollectionViewDataSource {
     
     // Reset timer
     @IBAction func resetButton(_ sender: Any) {
+        timer.invalidate()
+        counter = 0
+        currentTimeLabel.text = "--:--:--"
+        estimatedTimeLabel.text = "--:--:--"
+        if unitType == "M"
+        {
+            currentPaceLabel.text = "0.0 mi/h"
+            
+        }
+        else
+        {
+            currentPaceLabel.text = "0.0 km/h"
+        }
+        currentPace = 0.0
+        estimatedFinishTime = 0.0
+        pace = 0.0
+        started = false
+        startButtonStyle.isHidden = false
+        collectionView.isHidden = true
+        self.collectionView?.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     override func viewDidLoad() {
@@ -245,6 +279,7 @@ UICollectionViewDataSource {
             startButtonStyle.setTitle("START", for: .normal)
         }
         
+        
         // Hides collectionView and "SAVE" button
         collectionView.isHidden = true
         saveButtonStyle.isHidden = true
@@ -262,7 +297,20 @@ UICollectionViewDataSource {
         }
     }
     
+    
+    @IBAction func save(_ sender: Any) {
+        
+        saveButtonStyle.isEnabled = false
+        let record = dbHelper.createRecord(averagePace: pace, time: Int64(counter), date: "2018-01-01")
+        if record != nil {
+            raceModel.removeAndAdd(recordModelToAdd: record!)
+            print("please baby jesus")
+            dbHelper.save()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
+

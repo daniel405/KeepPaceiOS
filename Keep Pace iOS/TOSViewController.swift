@@ -24,7 +24,7 @@ class TOSViewController: UIViewController {
     
     // Opens Terms of Service on website
     @objc func tapFunction(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(URL(string : "http://www.google.com")!, options: [:], completionHandler: { (status) in
+        UIApplication.shared.open(URL(string : "www.sclfitness.ca/keep-pace-tos")!, options: [:], completionHandler: { (status) in
         })
     }
     
