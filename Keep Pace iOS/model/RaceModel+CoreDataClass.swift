@@ -117,7 +117,7 @@ public class RaceModel: NSManagedObject {
     //Get current pace
     func getCurrentPace(currentMarker: Int64, currentTime: Int64) -> Double {
         let currentDistance = currentMarker
-        return Double(currentDistance / currentMarker)
+        return Double(currentDistance / currentTime)
     }
     
     //Get estimated time to finish

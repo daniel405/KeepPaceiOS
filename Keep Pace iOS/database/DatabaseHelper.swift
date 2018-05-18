@@ -67,8 +67,10 @@ class DatabaseHelper {
                     print("Problem with creating RaceModel")
                     continue
                 }
-//                seedRecord(raceModel: raceModel)
-//                printRaceModel(raceModel: raceModel)
+                
+                seedRecord(raceModel: raceModel)
+                printRaceModel(raceModel: raceModel)
+                
                 do {
                     try context.save()
                 } catch {
