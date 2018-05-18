@@ -58,7 +58,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @objc func tellAFriend(sender:UITapGestureRecognizer) {
-        let myWebsite = NSURL(string:"https://keeppaceapp.com")
+        let myWebsite = NSURL(string:"https://www.sclfitness.ca/keep-pace-about")
         let shareCell = [myWebsite as Any]
         let activityViewController = UIActivityViewController(activityItems: shareCell, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

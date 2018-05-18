@@ -11,6 +11,9 @@ import MessageUI
 
 class AboutTableViewController: UITableViewController {
    
+    // "About Us" label
+    @IBOutlet weak var aboutUsLabel: UILabel!
+    
     // "Contact Us" label
     @IBOutlet weak var contactUsLabel: UIView!
     
@@ -29,6 +32,11 @@ class AboutTableViewController: UITableViewController {
         let contactTap = UITapGestureRecognizer(target: self, action: #selector(AboutTableViewController.contactUs))
         rateThisAppLabel.isUserInteractionEnabled = true
         rateThisAppLabel.addGestureRecognizer(contactTap)
+        
+        // Adds gesture to "About Us" label
+        let aboutTap = UITapGestureRecognizer(target: self, action: #selector(AboutTableViewController.aboutUs))
+        aboutUsLabel.isUserInteractionEnabled = true
+        aboutUsLabel.addGestureRecognizer(aboutTap)
     }
     
     // Function to rate the app on apple store
@@ -39,14 +47,20 @@ class AboutTableViewController: UITableViewController {
     
     // Function to send an email t  o Keep Pace.
     @objc func contactUs(sender:UITapGestureRecognizer) {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
-            //mail.setToRecipients(["stephen@sclfitness.ca"])
-            mail.setToRecipients(["daniel_katz@hotmail.ca"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-            present(mail, animated: true)
-        }
+//        if MFMailComposeViewController.canSendMail() {
+//            let mail = MFMailComposeViewController()
+//            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+//            //mail.setToRecipients(["stephen@sclfitness.ca"])
+//            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+//            present(mail, animated: true)
+//        }
+        UIApplication.shared.open(URL(string : "www.sclfitness.ca/keep-pace-contact")!, options: [:], completionHandler: { (status) in
+        })
+    }
+    
+    @objc func aboutUs(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(URL(string : "www.sclfitness.ca/keep-pace-about")!, options: [:], completionHandler: { (status) in
+        })
     }
     
     // Composes email
@@ -64,7 +78,7 @@ class AboutTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
 }
