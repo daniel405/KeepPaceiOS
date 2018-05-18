@@ -1,5 +1,5 @@
 //
-//  UserLogViewController.swift
+//  ActivityLogViewController.swift
 //  Keep Pace iOS
 //
 //  Created by Daniel Katz on 2018-04-25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserLogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ActivityLogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
     }
@@ -62,6 +62,7 @@ class UserLogViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         //Navigation bar title text

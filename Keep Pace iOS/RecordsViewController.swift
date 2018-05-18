@@ -21,12 +21,16 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "recordCell", for: indexPath) as! ReusableRecordCell
         let recordView = cell.recordCell as! RecordViewTemplate
         let dbHelper = DatabaseHelper()
-        let raceModel = dbHelper.getRaceModel(idToLookFor: indexPath.row)
+        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
 
         if raceModel != nil {
-            var arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
-            arr.sort(by: {$0.mTime < $1.mTime})
-            populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
+             var arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
+//            for item in arr {
+//                dbHelper.printRecordModel(recordModel: item)
+//            }
+//            arr.sort(by: {$0.mTime < $1.mTime})
+//            populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
+        
         }
         return cell
     }
@@ -64,6 +68,16 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
+        let dbHelper = DatabaseHelper()
+        
+        //Print Objects
+//        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
+//            if raceModel != nil {
+//                 var arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
+//                for item in arr {
+//                    dbHelper.printRecordModel(recordModel: item)
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {

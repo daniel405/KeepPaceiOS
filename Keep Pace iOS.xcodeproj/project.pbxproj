@@ -33,7 +33,7 @@
 		D7D9DB3920911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB3820911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift */; };
 		D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */; };
 		D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4820911D010000EFA7 /* TOSViewController.swift */; };
-		D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */; };
+		D7D9DB4B209124530000EFA7 /* ActivityLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */; };
 		D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */; };
 		D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4E209124660000EFA7 /* RaceViewController.swift */; };
 		D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */; };
@@ -92,7 +92,7 @@
 		D7D9DB3A20911C7E0000EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4820911D010000EFA7 /* TOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
-		D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogViewController.swift; sourceTree = "<group>"; };
+		D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4E209124660000EFA7 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
 		D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrunchViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */,
 				D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */,
 				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
-				D7D9DB4A209124530000EFA7 /* UserLogViewController.swift */,
+				D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */,
 				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
 				D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */,
 				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
@@ -383,7 +383,7 @@
 				B080EA9120AA50080080A6C4 /* ReusableRecordCell.swift in Sources */,
 				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
 				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
-				D7D9DB4B209124530000EFA7 /* UserLogViewController.swift in Sources */,
+				D7D9DB4B209124530000EFA7 /* ActivityLogViewController.swift in Sources */,
 				B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */,
 				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
 				B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */,
