@@ -29,7 +29,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
 //                dbHelper.printRecordModel(recordModel: item)
 //            }
 //            arr.sort(by: {$0.mTime < $1.mTime})
-//            populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
+            populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
         
         }
         return cell
@@ -68,7 +68,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
-        let dbHelper = DatabaseHelper()
+        //let dbHelper = DatabaseHelper()
         
         //Print Objects
 //        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
