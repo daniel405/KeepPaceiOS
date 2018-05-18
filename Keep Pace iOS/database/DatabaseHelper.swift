@@ -72,11 +72,12 @@ class DatabaseHelper {
                 }
                 seedRecord(raceModel: raceModel)
                 printRaceModel(raceModel: raceModel)
+
                 save()
                 //test = raceModel
             }
         }
-        
+
     }
     
     func save() {

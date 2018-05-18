@@ -21,6 +21,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "recordCell", for: indexPath) as! ReusableRecordCell
         let recordView = cell.recordCell as! RecordViewTemplate
         let dbHelper = DatabaseHelper()
+
         let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
 
         if raceModel != nil {
@@ -68,6 +69,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
+
         //let dbHelper = DatabaseHelper()
         
         //Print Objects
