@@ -30,8 +30,11 @@ class DatabaseHelper {
     //Dummy Data for seeding race
     let Records: [RecordSeed] = [
         RecordSeed(_AveragePace: 1.0, _Time: 2, _Date: "2018-01-RON"),
-        RecordSeed(_AveragePace: 9.1, _Time: 5, _Date: "2018-02-02"),
-        RecordSeed(_AveragePace: 2.1, _Time: 19, _Date: "2018-03-03")
+        RecordSeed(_AveragePace: 9.1, _Time: 111111111, _Date: "2018-02-02"),
+        RecordSeed(_AveragePace: 2.1, _Time: 111112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 11111112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 11112, _Date: "2018-03-03"),
+        RecordSeed(_AveragePace: 2.1, _Time: 113441112, _Date: "2018-03-03")
     ]
     
     
@@ -67,7 +70,7 @@ class DatabaseHelper {
                     print("Problem with creating RaceModel")
                     continue
                 }
-//                seedRecord(raceModel: raceModel)
+                  seedRecord(raceModel: raceModel)
 //                printRaceModel(raceModel: raceModel)
                 do {
                     try context.save()
@@ -77,25 +80,8 @@ class DatabaseHelper {
                 }
                 //test = raceModel
             }
-//            if let raceModelRetrieved = getRaceModel(managedObjectContext: context, _entityName: entityName, idToLookFor: 2) {
-//                print(raceModelRetrieved.mName!)
-//                raceModelRetrieved.mName = "Ducks"
-//                do {
-//                    try context.save()
-//                } catch {
-//                    let nserror = error as NSError
-//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//                }
-//            }
         }
         
-        //Print worst and best methods
-//        if let worstRecord = test?.getWorstRecord() {
-//            printRecordModel(recordModel: worstRecord)
-//        }
-//        if let bestRecord = test?.getBestRecord() {
-//             printRecordModel(recordModel:bestRecord)
-//        }
     }
     
     //Seeds Race Data with Dummy Record Data

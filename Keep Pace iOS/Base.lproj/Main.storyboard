@@ -219,24 +219,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLU-Tk-clu" customClass="RecordViewTemplate" customModule="Keep_Pace_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="375" height="74"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Kx-in0">
                                 <rect key="frame" x="0.0" y="170" width="375" height="642"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="5lt-Lq-BZw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCell" id="gcO-dY-Sec" customClass="ReusableRecordCell" customModule="Keep_Pace_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="29" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gcO-dY-Sec" id="XVh-cX-UWB">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gcO-dY-Sec" id="XVh-cX-UWB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAE-JR-aZS" customClass="RecordViewTemplate" customModule="Keep_Pace_iOS" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="0.0" width="365" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -252,25 +253,35 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLU-Tk-clu" customClass="RecordViewTemplate" customModule="Keep_Pace_iOS" customModuleProvider="target">
+                                <rect key="frame" x="5" y="88" width="365" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" header="YES"/>
+                                </accessibility>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OLU-Tk-clu" firstAttribute="trailing" secondItem="A2e-Xg-G5h" secondAttribute="trailing" id="8qH-IA-pbn"/>
                             <constraint firstItem="tcD-Kx-in0" firstAttribute="leading" secondItem="A2e-Xg-G5h" secondAttribute="leading" id="BgS-Dg-TEQ"/>
                             <constraint firstItem="tcD-Kx-in0" firstAttribute="trailing" secondItem="A2e-Xg-G5h" secondAttribute="trailing" id="CcT-Ve-ow0"/>
-                            <constraint firstItem="OLU-Tk-clu" firstAttribute="leading" secondItem="A2e-Xg-G5h" secondAttribute="leading" id="RMh-xF-v2T"/>
+                            <constraint firstItem="A2e-Xg-G5h" firstAttribute="trailing" secondItem="OLU-Tk-clu" secondAttribute="trailing" constant="5" id="Ghg-Gx-9Wa"/>
+                            <constraint firstAttribute="bottom" secondItem="tcD-Kx-in0" secondAttribute="bottom" id="INg-ng-957"/>
+                            <constraint firstItem="tcD-Kx-in0" firstAttribute="top" secondItem="OLU-Tk-clu" secondAttribute="bottom" constant="10" id="JcT-Bo-S4X"/>
+                            <constraint firstItem="OLU-Tk-clu" firstAttribute="top" secondItem="A2e-Xg-G5h" secondAttribute="top" constant="10" id="OhD-XB-Y0c"/>
+                            <constraint firstItem="OLU-Tk-clu" firstAttribute="leading" secondItem="A2e-Xg-G5h" secondAttribute="leading" constant="5" id="Sxf-wj-j4l"/>
                             <constraint firstAttribute="bottom" secondItem="tcD-Kx-in0" secondAttribute="bottom" id="VnL-8R-vj1"/>
-                            <constraint firstItem="tcD-Kx-in0" firstAttribute="top" secondItem="OLU-Tk-clu" secondAttribute="bottom" constant="10" id="gcZ-uM-HcH"/>
+                            <constraint firstItem="OLU-Tk-clu" firstAttribute="top" secondItem="A2e-Xg-G5h" secondAttribute="top" constant="10" id="Vvd-FP-tGx"/>
                             <constraint firstItem="tcD-Kx-in0" firstAttribute="leading" secondItem="A2e-Xg-G5h" secondAttribute="leading" id="r9Z-xk-4FV"/>
                             <constraint firstItem="tcD-Kx-in0" firstAttribute="trailing" secondItem="A2e-Xg-G5h" secondAttribute="trailing" id="srg-iF-u9L"/>
-                            <constraint firstItem="OLU-Tk-clu" firstAttribute="top" secondItem="A2e-Xg-G5h" secondAttribute="top" constant="10" id="wtN-s5-ZbY"/>
+                            <constraint firstItem="tcD-Kx-in0" firstAttribute="trailing" secondItem="A2e-Xg-G5h" secondAttribute="trailing" id="ucP-rB-4up"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A2e-Xg-G5h"/>
                     </view>
                     <connections>
                         <outlet property="headerView" destination="OLU-Tk-clu" id="rPc-LB-pVH"/>
                         <outlet property="tableView" destination="tcD-Kx-in0" id="Ymg-nz-Bxl"/>
-                        <segue destination="OC1-eX-cCQ" kind="show" id="fQu-Cw-DB9"/>
+                        <segue destination="OC1-eX-cCQ" kind="show" identifier="UserLogDetails" id="fQu-Cw-DB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hl-go-OpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,30 +296,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYa-Zr-mno">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-IM-Xov" customClass="RecordViewTemplate" customModule="Keep_Pace_iOS" customModuleProvider="target">
+                                <rect key="frame" x="5" y="88" width="365" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" header="YES"/>
+                                </accessibility>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-bE-C7k">
+                                <rect key="frame" x="0.0" y="170" width="375" height="642"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="H26-q1-8iV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e03-J1-4ET">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCell" id="pJW-ci-SyS" customClass="ReusableRecordCell" customModule="Keep_Pace_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e03-J1-4ET" id="wEV-4Q-2No">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pJW-ci-SyS" id="UyU-Nf-onS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-1c-luN" customClass="RecordViewTemplate" customModule="Keep_Pace_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="0.0" width="365" height="44"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pdm-1c-luN" firstAttribute="leading" secondItem="UyU-Nf-onS" secondAttribute="leading" constant="5" id="snr-Dg-Woc"/>
+                                                <constraint firstAttribute="trailing" secondItem="pdm-1c-luN" secondAttribute="trailing" constant="5" id="uGF-Ej-6xr"/>
+                                                <constraint firstItem="pdm-1c-luN" firstAttribute="centerY" secondItem="UyU-Nf-onS" secondAttribute="centerY" id="yeO-qQ-M1N"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recordCell" destination="pdm-1c-luN" id="Jay-EM-E92"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tvo-Hv-0nK" firstAttribute="bottom" secondItem="CYa-Zr-mno" secondAttribute="bottom" id="Gv1-mg-H0l"/>
-                            <constraint firstItem="CYa-Zr-mno" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" id="HbS-qv-X1M"/>
-                            <constraint firstItem="Tvo-Hv-0nK" firstAttribute="trailing" secondItem="CYa-Zr-mno" secondAttribute="trailing" id="cDg-Nv-Luw"/>
-                            <constraint firstItem="CYa-Zr-mno" firstAttribute="top" secondItem="Tvo-Hv-0nK" secondAttribute="top" id="hIq-Tv-CeQ"/>
+                            <constraint firstItem="VZ0-bE-C7k" firstAttribute="trailing" secondItem="Tvo-Hv-0nK" secondAttribute="trailing" id="3zd-mM-pJd"/>
+                            <constraint firstItem="Tvo-Hv-0nK" firstAttribute="trailing" secondItem="Xq0-IM-Xov" secondAttribute="trailing" constant="5" id="7uH-6U-kSP"/>
+                            <constraint firstAttribute="bottom" secondItem="VZ0-bE-C7k" secondAttribute="bottom" id="9U6-DS-rlT"/>
+                            <constraint firstItem="VZ0-bE-C7k" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" id="On7-9t-HsF"/>
+                            <constraint firstItem="Xq0-IM-Xov" firstAttribute="top" secondItem="Tvo-Hv-0nK" secondAttribute="top" constant="10" id="gc2-bJ-aD7"/>
+                            <constraint firstItem="Xq0-IM-Xov" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" constant="5" id="t7D-eY-3lU"/>
+                            <constraint firstItem="VZ0-bE-C7k" firstAttribute="top" secondItem="Xq0-IM-Xov" secondAttribute="bottom" constant="9" id="yhN-wb-PGF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tvo-Hv-0nK"/>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="Xq0-IM-Xov" id="KPw-0f-eiC"/>
+                        <outlet property="tableView" destination="VZ0-bE-C7k" id="jAq-vk-grH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlm-4D-Idd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,10 +529,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="0sO-1y-X0C">
-                                <rect key="frame" x="87.666666666666686" y="292" width="200" height="228"/>
+                                <rect key="frame" x="87.666666666666686" y="289" width="200" height="234"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-jj-KEa">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="GRIND PACE">
@@ -503,7 +548,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmi-6Q-c4q">
-                                        <rect key="frame" x="0.0" y="96" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="98" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="CRUNCH PACE">
@@ -519,7 +564,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-jH-bC0">
-                                        <rect key="frame" x="0.0" y="192" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="196" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="RACE PACE">
@@ -573,10 +618,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-4Y-Z1C">
-                                <rect key="frame" x="87.666666666666686" y="244.33333333333337" width="200" height="324"/>
+                                <rect key="frame" x="87.666666666666686" y="240.33333333333337" width="200" height="332"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBR-Hm-WE6">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="5K">
@@ -592,7 +637,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9p-dI-kIg">
-                                        <rect key="frame" x="0.0" y="95.999999999999972" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="97.999999999999972" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="10K">
@@ -608,7 +653,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEe-fP-e4G">
-                                        <rect key="frame" x="0.0" y="191.99999999999997" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="195.99999999999997" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="1/2 MARATHON">
@@ -624,7 +669,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k20-hb-XsE">
-                                        <rect key="frame" x="0.0" y="288" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="294" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="FULL MARATHON">
@@ -674,10 +719,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Ffd-1B-Lml">
-                                <rect key="frame" x="87.666666666666686" y="330.66666666666669" width="200" height="152"/>
+                                <rect key="frame" x="87.666666666666686" y="328.66666666666669" width="200" height="156"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWy-wh-jrM">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="437 STEPS (LEFT)">
@@ -693,7 +738,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-cZ-HLT">
-                                        <rect key="frame" x="0.0" y="116" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="118" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="457 STEPS (RIGHT)">
@@ -740,10 +785,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-YJ-aep">
-                                <rect key="frame" x="87.666666666666686" y="320.66666666666669" width="200" height="172"/>
+                                <rect key="frame" x="87.666666666666686" y="318.66666666666669" width="200" height="176"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjT-cf-rZj">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="JUST WILDCARD">
@@ -759,7 +804,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWj-13-h3n">
-                                        <rect key="frame" x="0.0" y="136" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="138" width="200" height="38"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="20"/>
                                         <state key="normal" title="BEAT YOUR BEST">
@@ -858,10 +903,10 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="gGg-W3-lEG">
-                                <rect key="frame" x="32.666666666666657" y="390" width="310" height="32"/>
+                                <rect key="frame" x="32.666666666666657" y="389" width="310" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0V2-Lo-vK0">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
                                         <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="NFD-xI-WE0"/>
@@ -880,7 +925,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG4-EH-IBj">
-                                        <rect key="frame" x="205" y="0.0" width="105" height="32"/>
+                                        <rect key="frame" x="205" y="0.0" width="105" height="34"/>
                                         <color key="backgroundColor" red="0.12019533659999999" green="0.69231903549999996" blue="0.9999416471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="Pzb-DN-SNP"/>
@@ -901,7 +946,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1pH-Nb-YBM">
-                                <rect key="frame" x="115.33333333333331" y="271" width="146" height="65"/>
+                                <rect key="frame" x="115.33333333333331" y="227" width="146" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Pace:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9U-61-KLN">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="30"/>
@@ -918,7 +963,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EpF-nT-1Ym">
-                                <rect key="frame" x="92.999999999999986" y="134" width="189.66666666666663" height="100"/>
+                                <rect key="frame" x="92.999999999999986" y="90" width="189.66666666666663" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJJ-Oy-NRa">
                                         <rect key="frame" x="0.0" y="0.0" width="189.66666666666666" height="36"/>
@@ -935,7 +980,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-7K-pO4">
-                                <rect key="frame" x="42.666666666666657" y="474" width="290" height="100"/>
+                                <rect key="frame" x="42.666666666666657" y="475" width="290" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Finish Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCD-ZF-5ej">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="36"/>
@@ -1568,6 +1613,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kwo-oK-SoC"/>
-        <segue reference="5X6-Ma-pBA"/>
+        <segue reference="uzM-pU-Q3i"/>
     </inferredMetricsTieBreakers>
 </document>
