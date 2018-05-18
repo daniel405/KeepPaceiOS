@@ -14,6 +14,7 @@ class RecordViewTemplate: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var bestLabel: UILabel!
+    @IBOutlet weak var stackContainer: UIStackView!
     
     
     override init(frame: CGRect) {
