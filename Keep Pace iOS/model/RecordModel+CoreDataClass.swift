@@ -25,7 +25,6 @@ public class RecordModel: NSManagedObject {
     
     //Data Initializer Method for Record Model
     public override func awakeFromInsert() {
-        
         mId = -1
         mAveragePace = 0.0
         mTime = 0
