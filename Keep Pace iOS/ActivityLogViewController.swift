@@ -26,18 +26,27 @@ class ActivityLogViewController: UIViewController, UITableViewDelegate, UITableV
     
     func populateCells(recordView: RecordViewTemplate, raceModel: RaceModel) {
         recordView.nameLabel.text = raceModel.mName
-        if unitType == "M" {
-            recordView.paceLabel.text = (raceModel.mAveragePace.description) + " mi/h"
-        } else {
-            recordView.paceLabel.text = (raceModel.mAveragePace.description) + " km/h"
-        }
         
         let recordModel = raceModel.getBestRecord()
         
         if recordModel != nil {
-            recordView.bestLabel.text = raceModel.timeTextFormat(ms: (recordModel?.mTime)!)
+            
+            paceLabelUpdate(recordView: recordView, value: String(format: "%.2f", (recordModel?.mAveragePace)!))
+            recordView.bestLabel.text = raceModel.timeTextFormat(pace: Double((recordModel?.mTime)!))
+            
         } else {
+            paceLabelUpdate(recordView: recordView, value: "0")
             recordView.bestLabel.text = "--:--:--"
+        }
+        
+    }
+    
+    //updates pace label based on user preference
+    func paceLabelUpdate(recordView: RecordViewTemplate, value: String) {
+        if unitType == "M" {
+            recordView.paceLabel.text = (value) + " mi/h"
+        } else {
+            recordView.paceLabel.text = (value) + " km/h"
         }
     }
     
