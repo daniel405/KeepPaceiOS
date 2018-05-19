@@ -324,11 +324,13 @@ UICollectionViewDataSource {
                 dbHelper.save()
             }
         }
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     @IBAction func finalCancelButton(_ sender: Any) {
         animateOut()
         saveButtonStyle.isEnabled = true
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -350,7 +352,6 @@ UICollectionViewDataSource {
             self.addItemView.alpha = 1
             self.addItemView.transform = CGAffineTransform.identity
         }
-        
     }
     
     
