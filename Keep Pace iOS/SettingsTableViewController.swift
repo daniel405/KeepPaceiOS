@@ -89,6 +89,9 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     // Unwinds back to SettingsTableViewController
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }

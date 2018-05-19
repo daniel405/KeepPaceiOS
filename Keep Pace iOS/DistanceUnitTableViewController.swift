@@ -47,8 +47,8 @@ class DistanceUnitTableViewController: UITableViewController {
         {
             UserDefaults.standard.set("M", forKey: "unitType")
         }
-        self.dismiss(animated: false, completion: nil)
-
+        self.navigationController?.popToRootViewController(animated: true)
+        //self.dismiss(animated: false, completion: nil)
         //self.performSegue(withIdentifier: "unwindToVC1", sender: self)
         // navigationController?.popViewController(animated: true)
     }

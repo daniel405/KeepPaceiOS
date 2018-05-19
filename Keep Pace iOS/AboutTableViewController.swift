@@ -22,46 +22,21 @@ class AboutTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Adds gesture to "Rate This App" label
-        let rateTap = UITapGestureRecognizer(target: self, action: #selector(AboutTableViewController.rateThisApp))
-        contactUsLabel.isUserInteractionEnabled = true
-        contactUsLabel.addGestureRecognizer(rateTap)
-        
-        // Adds gesture to "Contact Us" label
-        let contactTap = UITapGestureRecognizer(target: self, action: #selector(AboutTableViewController.contactUs))
-        rateThisAppLabel.isUserInteractionEnabled = true
-        rateThisAppLabel.addGestureRecognizer(contactTap)
-        
-        // Adds gesture to "About Us" label
-        let aboutTap = UITapGestureRecognizer(target: self, action: #selector(AboutTableViewController.aboutUs))
-        aboutUsLabel.isUserInteractionEnabled = true
-        aboutUsLabel.addGestureRecognizer(aboutTap)
+
     }
     
-    // Function to rate the app on apple store
-    @objc func rateThisApp(sender:UITapGestureRecognizer) {
-        //        let url = URL(string: "itms-apps:itunes.apple.com/us/app/apple-store/id\(YOURAPPID)?mt=8&action=write-review")!
-        //        UIApplication.shared.openURL(url)
+    // Function to send an email to Keep Pace.
+    func contactUs() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+            //mail.setToRecipients(["stephen@sclfitness.ca"])
+            mail.setMessageBody("<p>Testing...!</p>", isHTML: true)
+            present(mail, animated: true)
+        }
     }
+
     
-    // Function to send an email t  o Keep Pace.
-    @objc func contactUs(sender:UITapGestureRecognizer) {
-//        if MFMailComposeViewController.canSendMail() {
-//            let mail = MFMailComposeViewController()
-//            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
-//            //mail.setToRecipients(["stephen@sclfitness.ca"])
-//            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-//            present(mail, animated: true)
-//        }
-        UIApplication.shared.open(URL(string : "www.sclfitness.ca/keep-pace-contact")!, options: [:], completionHandler: { (status) in
-        })
-    }
-    
-    @objc func aboutUs(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(URL(string : "www.sclfitness.ca/keep-pace-about")!, options: [:], completionHandler: { (status) in
-        })
-    }
     
     // Composes email
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -80,5 +55,24 @@ class AboutTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch(indexPath.row)
+        {
+        case 0:
+            UIApplication.shared.open(URL(string : "http://www.sclfitness.ca/keep-pace-about")!, options: [:], completionHandler: { (status) in
+            })
+        case 1:
+            UIApplication.shared.open(URL(string : "http://www.sclfitness.ca/keep-pace-contact")!, options: [:], completionHandler: { (status) in
+            })
+        case 2:
+        //        let url = URL(string: "itms-apps:itunes.apple.com/us/app/apple-store/id\(YOURAPPID)?mt=8&action=write-review")!
+        //        UIApplication.shared.openURL(url)
+            break
+        default:
+            break
+        }
+    }
 }

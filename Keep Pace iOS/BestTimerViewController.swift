@@ -46,9 +46,6 @@ UICollectionViewDataSource {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
-        
             if unitType == "M" && (raceType == "1/2 MARATHON" || raceType == "FULL MARATHON")
             {
                     markersNum = Int(ceil(Double((raceModel.getAsInt(variableToGet: "mMarkers"))) / 1.609344497892563))
@@ -224,8 +221,8 @@ UICollectionViewDataSource {
     @IBAction func resetButton(_ sender: Any) {
         timer.invalidate()
         counter = 0
-        currentTimeLabel.text = "--:--:--"
-        estimatedTimeLabel.text = "--:--:--"
+        currentTimeLabel.text = "00:00:00"
+        estimatedTimeLabel.text = "00:00:00"
         if unitType == "M"
         {
             currentPaceLabel.text = "0.0 mi/h"
@@ -334,10 +331,12 @@ UICollectionViewDataSource {
                 dbHelper.save()
             }
         }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func finalCancelButton(_ sender: Any) {
         animateOut()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
