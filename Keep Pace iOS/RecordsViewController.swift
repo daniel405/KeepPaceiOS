@@ -46,6 +46,10 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var headerView: RecordViewTemplate!
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func deleteButton(_ sender: Any) {
+        deleteAllRecords()
+        tableView.reloadData()
+    }
     
     //save id for data display
     var arr: [RecordModel] = []
@@ -92,9 +96,24 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if raceModel != nil {
             arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
             arr.sort(by: {$0.mTime < $1.mTime})
-            print(raceModel?.mName)
+            print(raceModel?.mName!)
             print(arr)
         }
+    }
+    
+    func deleteAllRecords() {
+        let dbHelper = DatabaseHelper()
+        
+        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
+        
+        if raceModel != nil {
+            for item in (raceModel?.recordmodel)! {
+                let record = item as! RecordModel
+                raceModel?.removeFromRecordmodel(record)
+                dbHelper.save()
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
