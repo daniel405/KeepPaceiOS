@@ -35,7 +35,7 @@ class ActivityLogViewController: UIViewController, UITableViewDelegate, UITableV
             recordView.bestLabel.text = raceModel.timeTextFormat(pace: Double((recordModel?.mTime)!))
             
         } else {
-            paceLabelUpdate(recordView: recordView, value: "0")
+            paceLabelUpdate(recordView: recordView, value: "0.00")
             recordView.bestLabel.text = "--:--:--"
         }
         

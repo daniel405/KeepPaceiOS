@@ -46,16 +46,27 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var headerView: RecordViewTemplate!
     @IBOutlet weak var tableView: UITableView!
+    
     @IBAction func deleteButton(_ sender: Any) {
+        animateIn()
+    }
+    @IBAction func clearButton(_ sender: Any) {
         deleteAllRecords()
         tableView.reloadData()
+        animateOut()
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        animateOut()
     }
     
     //save id for data display
     var arr: [RecordModel] = []
     var curId: Int = -1
     let dbHelper = DatabaseHelper()
-    
+    var effect:UIVisualEffect!
+    @IBOutlet var addItemView: UIView!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +83,10 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        effect = visualEffectView.effect
+        visualEffectView.isHidden = true
+        addItemView.layer.cornerRadius = 5
         
         tableView.tableFooterView = UIView()
 
@@ -101,6 +116,8 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    
+    
     func deleteAllRecords() {
         let dbHelper = DatabaseHelper()
         
@@ -124,5 +141,31 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
+    }
+    
+    func animateIn() {
+        self.view.addSubview(addItemView)
+        addItemView.center = self.view.center
+        addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        addItemView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.visualEffectView.isHidden = false
+            self.addItemView.alpha = 1
+            self.addItemView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut () {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.addItemView.alpha = 0
+            
+            self.visualEffectView.isHidden = true
+            
+        }) { (success:Bool) in
+            self.addItemView.removeFromSuperview()
+            self.visualEffectView.isHidden = true
+        }
     }
 }

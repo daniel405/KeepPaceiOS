@@ -327,14 +327,29 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edU-ka-qXo">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VzR-Jx-VLm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.5039597602684931" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VZ0-bE-C7k" firstAttribute="trailing" secondItem="Tvo-Hv-0nK" secondAttribute="trailing" id="3zd-mM-pJd"/>
                             <constraint firstItem="Tvo-Hv-0nK" firstAttribute="trailing" secondItem="Xq0-IM-Xov" secondAttribute="trailing" constant="5" id="7uH-6U-kSP"/>
                             <constraint firstAttribute="bottom" secondItem="VZ0-bE-C7k" secondAttribute="bottom" id="9U6-DS-rlT"/>
+                            <constraint firstItem="edU-ka-qXo" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" id="EeY-73-SIc"/>
+                            <constraint firstAttribute="bottom" secondItem="edU-ka-qXo" secondAttribute="bottom" id="GTk-VD-YUb"/>
                             <constraint firstItem="VZ0-bE-C7k" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" id="On7-9t-HsF"/>
+                            <constraint firstItem="edU-ka-qXo" firstAttribute="top" secondItem="Tvo-Hv-0nK" secondAttribute="top" id="Pjk-7b-UDq"/>
+                            <constraint firstItem="edU-ka-qXo" firstAttribute="trailing" secondItem="Tvo-Hv-0nK" secondAttribute="trailing" id="bAZ-YT-pph"/>
                             <constraint firstItem="Xq0-IM-Xov" firstAttribute="top" secondItem="Tvo-Hv-0nK" secondAttribute="top" constant="10" id="gc2-bJ-aD7"/>
+                            <constraint firstAttribute="trailing" secondItem="edU-ka-qXo" secondAttribute="trailing" id="rd8-El-9RX"/>
                             <constraint firstItem="Xq0-IM-Xov" firstAttribute="leading" secondItem="Tvo-Hv-0nK" secondAttribute="leading" constant="5" id="t7D-eY-3lU"/>
                             <constraint firstItem="VZ0-bE-C7k" firstAttribute="top" secondItem="Xq0-IM-Xov" secondAttribute="bottom" constant="9" id="yhN-wb-PGF"/>
                         </constraints>
@@ -348,13 +363,74 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addItemView" destination="Scc-wG-1kP" id="GgE-ZX-fsc"/>
                         <outlet property="headerView" destination="Xq0-IM-Xov" id="KPw-0f-eiC"/>
                         <outlet property="tableView" destination="VZ0-bE-C7k" id="jAq-vk-grH"/>
+                        <outlet property="visualEffectView" destination="edU-ka-qXo" id="GHe-zc-Xsc"/>
                     </connections>
                 </viewController>
+                <view contentMode="scaleToFill" id="Scc-wG-1kP">
+                    <rect key="frame" x="0.0" y="0.0" width="333" height="151"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="avF-xH-mUq">
+                            <rect key="frame" x="86" y="98" width="161" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eke-II-owO">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                    <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="9Ws-Kg-764"/>
+                                        <constraint firstAttribute="height" constant="30" id="MyA-6T-vQ0"/>
+                                    </constraints>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelButton:" destination="OC1-eX-cCQ" eventType="touchUpInside" id="fHM-lh-P3b"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3D-3x-eia">
+                                    <rect key="frame" x="101" y="0.0" width="60" height="30"/>
+                                    <color key="backgroundColor" red="0.1217500227" green="0.69489910560000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="1KY-Bn-jcq"/>
+                                        <constraint firstAttribute="height" constant="30" id="SJa-qn-VLc"/>
+                                    </constraints>
+                                    <state key="normal" title="Clear">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clearButton:" destination="OC1-eX-cCQ" eventType="touchUpInside" id="9Gj-7k-kgx"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will clear all records. Would you like to continue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-ha-LYH">
+                            <rect key="frame" x="47" y="21" width="239" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.86017765410000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="WYt-ss-p8V"/>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlm-4D-Idd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1254"/>
+            <point key="canvasLocation" x="757.60000000000002" y="1430.5418719211823"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -926,7 +1002,7 @@
                                     <constraint firstAttribute="width" constant="115" id="xVo-ox-YDE"/>
                                 </constraints>
                             </stackView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-RZ-gz1">
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-RZ-gz1">
                                 <rect key="frame" x="0.0" y="88" width="376.33333333333331" height="724"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kcc-S1-9OO">
                                     <rect key="frame" x="0.0" y="0.0" width="376.33333333333331" height="724"/>
@@ -1365,7 +1441,7 @@
                                     <constraint firstAttribute="height" constant="65" id="gia-et-Nue"/>
                                 </constraints>
                             </stackView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hZ-ML-vPf">
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hZ-ML-vPf">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="v9i-t6-yC3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
