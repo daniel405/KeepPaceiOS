@@ -163,9 +163,9 @@ public class RaceModel: NSManagedObject {
     }
     
     //Converts ms to hh:mm:ss or mm:ss.ms
-    func timeTextFormat(ms: Int64) -> String {
-        let msec = Int64(ms / 10) % 100
-        var sec = Int64(ms / 1000)
+    func timeTextFormat(pace: Double) -> String {
+        let msec = Int64(pace / 10) % 100
+        var sec = Int64(pace / 1000)
         var min = sec / 60
         let hour = min / 60
         sec = sec % 60
@@ -174,18 +174,17 @@ public class RaceModel: NSManagedObject {
         if (hour > 0) {
             return String(format: "%02d:%02d:%02d", hour, min, sec)
         }
-        
-        return String(format: "%02d:%02d:%02d", hour, min, msec)
+        return String(format: "%02d:%02d:%02d", min, sec, msec)
     }
     
     //Converts estimates time to String
     func etimateTimeText(pace: Double) -> String {
-        return timeTextFormat(ms: getEstimateTime(pace: pace))
+        return timeTextFormat(pace: Double(getEstimateTime(pace: pace)))
     }
     
     //Converts Best Time To String
     func getTimeText() -> String {
-        return timeTextFormat(ms: mTime)
+        return timeTextFormat(pace: Double(mTime))
     }
     
     //Removes oldest record and adds new one

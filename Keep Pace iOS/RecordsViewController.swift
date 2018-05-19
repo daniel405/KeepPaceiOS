@@ -20,18 +20,14 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recordCell", for: indexPath) as! ReusableRecordCell
         let recordView = cell.recordCell as! RecordViewTemplate
+
         let dbHelper = DatabaseHelper()
-
-        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
-
-        if raceModel != nil {
-             var arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
-//            for item in arr {
-//                dbHelper.printRecordModel(recordModel: item)
-//            }
-//            arr.sort(by: {$0.mTime < $1.mTime})
-            populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
         
+        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
+        if raceModel != nil {
+            if arr.count > 0 {
+                populateCells(recordView: recordView, raceModel: raceModel!, recordModel: arr[indexPath.row])
+            }
         }
         return cell
     }
@@ -44,7 +40,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             recordView.paceLabel.text = String(format: "%.2f", recordModel.mAveragePace) + " km/h"
         }
-        recordView.bestLabel.text = raceModel.timeTextFormat(ms: recordModel.mTime)
+        recordView.bestLabel.text = recordModel.timeTextFormat(pace: Double(recordModel.mTime))
         //recordView.bestLabel.text = recordModel.mTime.description
     }
     
@@ -52,8 +48,10 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     //save id for data display
+    var arr: [RecordModel] = []
     var curId: Int = -1
     let dbHelper = DatabaseHelper()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +59,11 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Racing Sans One", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
         
         headerView.nameLabel.text = "Date"
+        headerView.nameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         headerView.paceLabel.text = "Avg. Pace"
+        headerView.paceLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         headerView.bestLabel.text = "Time"
+        headerView.bestLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         tableView.delegate = self
@@ -80,10 +81,29 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
 //                    dbHelper.printRecordModel(recordModel: item)
 //            }
 //        }
+        
+    }
+    
+    func loadData() {
+        let dbHelper = DatabaseHelper()
+        
+        let raceModel = dbHelper.getRaceModel(idToLookFor: curId)
+        
+        if raceModel != nil {
+            arr = raceModel?.recordmodel?.allObjects as! [RecordModel]
+            arr.sort(by: {$0.mTime < $1.mTime})
+            print(raceModel?.mName)
+            print(arr)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
     }
 }
