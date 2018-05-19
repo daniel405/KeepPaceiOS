@@ -34,7 +34,6 @@
 		D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */; };
 		D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4820911D010000EFA7 /* TOSViewController.swift */; };
 		D7D9DB4B209124530000EFA7 /* ActivityLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */; };
-		D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */; };
 		D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4E209124660000EFA7 /* RaceViewController.swift */; };
 		D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */; };
 		D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB52209124800000EFA7 /* PaceViewController.swift */; };
@@ -93,7 +92,6 @@
 		D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4820911D010000EFA7 /* TOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogViewController.swift; sourceTree = "<group>"; };
-		D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D7D9DB4E209124660000EFA7 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
 		D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrunchViewController.swift; sourceTree = "<group>"; };
 		D7D9DB52209124800000EFA7 /* PaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */,
 				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
 				D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */,
-				D7D9DB4C2091245C0000EFA7 /* SettingsViewController.swift */,
 				D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */,
 				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
 				D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */,
@@ -367,7 +364,6 @@
 			files = (
 				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
 				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
-				D7D9DB4D2091245C0000EFA7 /* SettingsViewController.swift in Sources */,
 				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
 				B080EA8F20AA3DA70080A6C4 /* RecordViewTemplate.swift in Sources */,
 				D71DD45C20A63D6000FA2E2F /* ButtonCollectionViewCell.swift in Sources */,
