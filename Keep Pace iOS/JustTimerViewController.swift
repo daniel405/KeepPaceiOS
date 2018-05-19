@@ -239,6 +239,8 @@ UICollectionViewDataSource {
         startButtonStyle.isHidden = false
         collectionView.isHidden = true
         self.collectionView?.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        pauseButtonStyle.setTitle("PAUSE", for: .normal)
+
     }
     
     override func viewDidLoad() {
