@@ -279,7 +279,7 @@
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="571.92118226600985"/>
         </scene>
-        <!--Records View Controller-->
+        <!--Record Log-->
         <scene sceneID="P2P-lO-2M2">
             <objects>
                 <viewController id="OC1-eX-cCQ" customClass="RecordsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,6 +341,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tvo-Hv-0nK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Record Log" id="bdR-dn-aJl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="spm-zI-ach" userLabel="Delete">
+                            <connections>
+                                <action selector="deleteButton:" destination="OC1-eX-cCQ" id="6rL-vB-vKX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="headerView" destination="Xq0-IM-Xov" id="KPw-0f-eiC"/>
                         <outlet property="tableView" destination="VZ0-bE-C7k" id="jAq-vk-grH"/>
@@ -913,7 +920,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh2-OF-JNX">
-                                        <rect key="frame" x="52.000000000000014" y="46" width="186.33333333333337" height="54"/>
+                                        <rect key="frame" x="51.666666666666671" y="46" width="186.33333333333331" height="54"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -978,7 +985,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-rz-7sM">
-                                <rect key="frame" x="95.333333333333329" y="110" width="186.33333333333337" height="103"/>
+                                <rect key="frame" x="95.666666666666671" y="110" width="186.33333333333331" height="103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-rD-sWG">
                                         <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="39"/>
@@ -1084,7 +1091,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-RZ-gz1">
                                 <rect key="frame" x="0.0" y="88" width="376.33333333333331" height="724"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kcc-S1-9OO">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="724"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376.33333333333331" height="724"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
