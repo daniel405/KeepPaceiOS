@@ -825,7 +825,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-cB-AP3">
-                                <rect key="frame" x="43.333333333333314" y="475" width="290" height="100"/>
+                                <rect key="frame" x="44" y="475" width="290" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Finish Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOt-m5-2PU">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="36"/>
@@ -834,7 +834,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh2-OF-JNX">
-                                        <rect key="frame" x="51.666666666666671" y="46" width="186.33333333333331" height="54"/>
+                                        <rect key="frame" x="51.999999999999986" y="46" width="186.33333333333331" height="54"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -865,7 +865,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-QI-Ow4">
-                                <rect key="frame" x="33.333333333333314" y="389" width="310" height="34"/>
+                                <rect key="frame" x="34" y="389" width="310" height="34"/>
                                 <subviews>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4na-K5-knn">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="34"/>
@@ -899,7 +899,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-rz-7sM">
-                                <rect key="frame" x="95.666666666666671" y="110" width="186.33333333333331" height="103"/>
+                                <rect key="frame" x="95.000000000000014" y="110" width="186.33333333333337" height="103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-rD-sWG">
                                         <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="39"/>
@@ -968,7 +968,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7re-RE-DQc">
-                                <rect key="frame" x="118.33333333333334" y="609" width="140.00000000000003" height="140"/>
+                                <rect key="frame" x="119" y="609" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.12019533659999999" green="0.69231903549999996" blue="0.9999416471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="g5D-0x-dLO"/>
@@ -1557,6 +1557,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n1l-vS-brt"/>
-        <segue reference="uzM-pU-Q3i"/>
+        <segue reference="5X6-Ma-pBA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -221,8 +221,8 @@ UICollectionViewDataSource {
     @IBAction func resetButton(_ sender: Any) {
         timer.invalidate()
         counter = 0
-        currentTimeLabel.text = "--:--:--"
-        estimatedTimeLabel.text = "--:--:--"
+        currentTimeLabel.text = "00:00:00"
+        estimatedTimeLabel.text = "00:00:00"
         if unitType == "M"
         {
             currentPaceLabel.text = "0.0 mi/h"
