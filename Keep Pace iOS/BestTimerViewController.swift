@@ -169,7 +169,10 @@ UICollectionViewDataSource {
         started = true
         startButtonStyle.isHidden = true
         collectionView.isHidden = false
-        pauseButtonStyle.isHidden = false
+        if modeType != "Pro Mode"
+        {
+            pauseButtonStyle.isHidden = false
+        }
         pauseButtonStyle.isEnabled = true
         resetButtonStyle.isHidden = false
     }
