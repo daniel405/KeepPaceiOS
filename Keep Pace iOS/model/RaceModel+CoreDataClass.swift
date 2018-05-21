@@ -63,6 +63,20 @@ public class RaceModel: NSManagedObject {
         return bestRecord
     }
     
+    func getAveragePace() -> RecordModel? {
+        if recordmodel?.count == 0 {
+            return nil
+        }
+        var bestRecord = (recordmodel?.allObjects as? [RecordModel])?.first
+        for item in recordmodel! {
+            let record = item as! RecordModel
+            if record.mAveragePace < (bestRecord?.mAveragePace)! {
+                bestRecord = record
+            }
+        }
+        return bestRecord
+    }
+    
 //    //Returns the distance in miles
 //    func getDistanceInMiles() -> Double {
 //        return mDistance * milePerKm

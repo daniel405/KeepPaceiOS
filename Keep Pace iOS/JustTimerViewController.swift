@@ -8,27 +8,51 @@
 
 import UIKit
 import CoreData
+import AudioToolbox.AudioServices
 
 
-
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
 class JustTimerViewController: UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource {
     var timer = Timer()
+    var notification = Timer()
+    var img = UIImage()
     var counter = 0.0
     let unitType = UserDefaults.standard.string(forKey: "unitType")
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     var raceType : String = ""
     var markersNum = 0
+    
     var currentPace = 0.0
+    var saved = false
     var estimatedFinishTime = 0.0
     var pace = 0.0
+    var avgPace = 0.0
+    var milesConvert = 1.609344497892563
     var dbHelper = DatabaseHelper()
     var raceModel = RaceModel()
     var recordModel = RecordModel()
     var started = false
-    var saved = false
     var grouseGrindMarkers = ["1/4", "1/2", "3/4"]
     var stepsMarkers = ["50", "100", "150", "200", "250", "300", "350", "400", "450"]
+    var grouseGrindPercentages = [0.39, 0.57, 0.82]
+    var steps437Percentages = [0.1144, 0.2288, 0.3432, 0.4576, 0.5720, 0.6864, 0.8008, 0.9152]
+    var steps457Percentages = [0.1044, 0.2188, 0.3232, 0.4376, 0.547, 0.6564, 0.7658, 0.8752, 0.9846]
     var effect:UIVisualEffect!
     let date = Date()
     let formatter = DateFormatter()
@@ -45,12 +69,9 @@ UICollectionViewDataSource {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
-        
         if unitType == "M" && (raceType == "1/2 MARATHON" || raceType == "FULL MARATHON")
         {
-            markersNum = Int(ceil(Double((raceModel.getAsInt(variableToGet: "mMarkers"))) / 1.609344497892563))
+            markersNum = Int(ceil(Double((raceModel.getAsInt(variableToGet: "mMarkers"))) / milesConvert))
         }
         else
         {
@@ -70,16 +91,19 @@ UICollectionViewDataSource {
         case "GROUSE GRIND":
             if indexPath.row < grouseGrindMarkers.count
             {
+                img = (UIImage(named: "grindfinishblue") as UIImage?)!
                 cell.distanceButton.text = grouseGrindMarkers[indexPath.row]
             }
         case "437 STEPS (LEFT)":
             if indexPath.row < stepsMarkers.count - 1
             {
+                img = (UIImage(named: "finish437blue") as UIImage?)!
                 cell.distanceButton.text = stepsMarkers[indexPath.row]
             }
         case "457 STEPS (RIGHT)":
             if indexPath.row < stepsMarkers.count
             {
+                img = (UIImage(named: "finish457blue") as UIImage?)!
                 cell.distanceButton.text = stepsMarkers[indexPath.row]
             }
         default:
@@ -98,7 +122,16 @@ UICollectionViewDataSource {
         
         if indexPath.row == markersNum - 1
         {
-            cell.distanceButton.text = "FINISH"
+            if raceType == "GROUSE GRIND" || raceType == "437 STEPS (LEFT)" || raceType == "457 STEPS (RIGHT)"
+            {
+                let imageNew = img.resizeImage(targetSize: CGSize.init(width: cell.distanceButton.frame.width, height: cell.distanceButton.frame.height))
+                cell.distanceButton.backgroundColor = UIColor(patternImage: imageNew)
+                cell.distanceButton.text = ""
+            }
+            else
+            {
+                cell.distanceButton.text = "FINISH"
+            }
         }
         
         return cell
@@ -124,8 +157,9 @@ UICollectionViewDataSource {
             self.collectionView?.scrollToItem(at:IndexPath(item: indexPath.row + 1, section: 0), at: .centeredHorizontally, animated: true)
         }
         
-        currentPace = getCurrentPace(currentMarker: indexPath.row + 1, currentTime: counter)
+        currentPace = getCurrentPace(currentMarker: indexPath.row, currentTime: counter)
         pace = currentPace * 1000.0 * 60.0 * 60.0
+        avgPace += pace
         
         if unitType == "M" && (raceType == "1/2 MARATHON" || raceType == "FULL MARATHON")
         {
@@ -136,14 +170,78 @@ UICollectionViewDataSource {
             currentPaceLabel.text = String(format: "%.2f", pace) + " km/h"
         }
         
+        
         estimatedTimeLabel.text = timeTextFormat(pace: getEstimatedTime(pace: currentPace))
         
+        paceNotification()
+        notification.invalidate()
+        notification = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
+            self.currentPaceLabel.textColor = UIColor.black
+        }
     }
     
+    func vibrate() {
+        AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
+            // do what you'd like now that the sound has completed playing
+        }
+    }
+    
+    @objc func paceNotification()
+    {
+        if raceModel.getAveragePace()?.mAveragePace != nil
+        {
+            if pace > (raceModel.getAveragePace()?.mAveragePace)!
+            {
+                currentPaceLabel.textColor = UIColor.green
+            }
+            else
+            {
+                currentPaceLabel.textColor = UIColor.red
+                vibrate()
+            }
+        }
+    }
     
     func getCurrentPace(currentMarker: Int, currentTime: Double) -> Double {
-        let currentDistance = currentMarker
-        return Double(currentDistance) / currentTime
+        
+        if currentMarker != markersNum - 1
+        {
+            if raceType == "GROUSE GRIND"
+            {
+                return (raceModel.mDistance * grouseGrindPercentages[currentMarker]) / currentTime
+            }
+            else if raceType == "437 STEPS (LEFT)"
+            {
+                return (raceModel.mDistance * steps437Percentages[currentMarker]) / currentTime
+            }
+            else if raceType == "457 STEPS (RIGHT)"
+            {
+                return (raceModel.mDistance * steps457Percentages[currentMarker]) / currentTime
+            }
+            else
+            {
+                return Double(currentMarker + 1) / currentTime
+            }
+        }
+        else
+        {
+            if raceType == "GROUSE GRIND"
+            {
+                return (raceModel.mDistance * 1) / currentTime
+            }
+            else if raceType == "437 STEPS (LEFT)"
+            {
+                return (raceModel.mDistance * 1) / currentTime
+            }
+            else if raceType == "457 STEPS (RIGHT)"
+            {
+                return (raceModel.mDistance * 1) / currentTime
+            }
+            else
+            {
+                return Double(currentMarker + 1) / currentTime
+            }
+        }
     }
     
     func getEstimatedTime(pace: Double) -> Double {
@@ -171,7 +269,12 @@ UICollectionViewDataSource {
         started = true
         startButtonStyle.isHidden = true
         collectionView.isHidden = false
+        if modeType != "Pro Mode"
+        {
+            pauseButtonStyle.isHidden = false
+        }
         pauseButtonStyle.isEnabled = true
+        resetButtonStyle.isHidden = false
     }
     
     
@@ -240,18 +343,19 @@ UICollectionViewDataSource {
         collectionView.isHidden = true
         self.collectionView?.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         pauseButtonStyle.setTitle("PAUSE", for: .normal)
-
+        currentPaceLabel.textColor = UIColor.black
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        pauseButtonStyle.isHidden = true
+        resetButtonStyle.isHidden = true
         pauseButtonStyle.isEnabled = false
         effect = visualEffectView.effect
         visualEffectView.isHidden = true
         addItemView.layer.cornerRadius = 5
         formatter.dateFormat = "yyyy-MM-dd"
-
         
         switch (raceType)
         {
@@ -316,11 +420,13 @@ UICollectionViewDataSource {
     
     @IBAction func finalSaveButton(_ sender: Any) {
         saveButtonStyle.isEnabled = false
+        avgPace = avgPace / Double(markersNum)
+        //recordModel.mAveragePace = avgPace
         if saved == false
         {
             saved = true
             let result = formatter.string(from: date)
-            let record = dbHelper.createRecord(averagePace: pace, time: Int64(counter), date: result)
+            let record = dbHelper.createRecord(averagePace: avgPace, time: Int64(counter), date: result)
             if record != nil {
                 raceModel.removeAndAdd(recordModelToAdd: record!)
                 dbHelper.save()
@@ -328,17 +434,15 @@ UICollectionViewDataSource {
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
-
+    
     @IBAction func finalCancelButton(_ sender: Any) {
         animateOut()
-        saveButtonStyle.isEnabled = true
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     func animateIn() {
         self.view.addSubview(addItemView)
@@ -348,27 +452,24 @@ UICollectionViewDataSource {
         addItemView.alpha = 0
         
         UIView.animate(withDuration: 0.4) {
-            //self.visualEffectView.effect = self.effect
             self.visualEffectView.isHidden = false
-            
             self.addItemView.alpha = 1
             self.addItemView.transform = CGAffineTransform.identity
         }
     }
-    
     
     func animateOut () {
         UIView.animate(withDuration: 0.3, animations: {
             self.addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.addItemView.alpha = 0
             
-            self.visualEffectView.effect = nil
+            self.visualEffectView.isHidden = true
             
         }) { (success:Bool) in
             self.addItemView.removeFromSuperview()
         }
     }
-    
 }
+
 
 
