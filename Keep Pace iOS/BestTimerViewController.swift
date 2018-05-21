@@ -37,7 +37,6 @@ UICollectionViewDataSource {
     let modeType = UserDefaults.standard.string(forKey: "modeType")
     var raceType : String = ""
     var markersNum = 0
-    
     var currentPace = 0.0
     var saved = false
     var estimatedFinishTime = 0.0
@@ -145,8 +144,8 @@ UICollectionViewDataSource {
         if indexPath.row == markersNum - 1
         {
             timer.invalidate()
+            CollectionViewInvisible()
             estimatedTimeLabel.text = currentTimeLabel.text
-            collectionView.isHidden = true
             saveButtonStyle.isHidden = false
             pauseButtonStyle.isHidden = true
             resetButtonStyle.isHidden = true
@@ -269,7 +268,7 @@ UICollectionViewDataSource {
         startTimer()
         started = true
         startButtonStyle.isHidden = true
-        collectionView.isHidden = false
+        CollectionViewVisible()
         if modeType != "Pro Mode"
         {
             pauseButtonStyle.isHidden = false
@@ -341,7 +340,7 @@ UICollectionViewDataSource {
         pace = 0.0
         started = false
         startButtonStyle.isHidden = false
-        collectionView.isHidden = true
+        CollectionViewInvisible()
         self.collectionView?.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         pauseButtonStyle.setTitle("PAUSE", for: .normal)
         currentPaceLabel.textColor = UIColor.black
@@ -404,7 +403,7 @@ UICollectionViewDataSource {
         
         
         // Hides collectionView and "SAVE" button
-        collectionView.isHidden = true
+        CollectionViewInvisible()
         saveButtonStyle.isHidden = true
         
         // Rounds "START" and "SAVE" buttons
@@ -419,8 +418,7 @@ UICollectionViewDataSource {
             resetButtonStyle.center.x = self.view.center.x
         }
     }
-    
-    
+
     @IBAction func save(_ sender: Any) {
         animateIn()
     }
@@ -443,7 +441,7 @@ UICollectionViewDataSource {
     }
     
     @IBAction func finalCancelButton(_ sender: Any) {
-        animateOut()
+//        animateOut()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -476,6 +474,15 @@ UICollectionViewDataSource {
             self.addItemView.removeFromSuperview()
         }
     }
+    
+    func CollectionViewInvisible() {
+        collectionView.alpha = 0
+    }
+    
+    func CollectionViewVisible() {
+        collectionView.alpha = 1
+    }
+    
 }
 
 
