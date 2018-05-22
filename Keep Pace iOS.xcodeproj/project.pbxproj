@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */; };
+		B007C93820A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */; };
+		B007C93920A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */; };
+		B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */; };
+		B007C93B20A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */; };
+		B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */; };
+		B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93E20A0FDC600C03F41 /* RaceSeed.swift */; };
+		B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007C93F20A0FDC600C03F41 /* RecordSeed.swift */; };
+		B080EA8D20AA3A120080A6C4 /* RecordViewTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = B080EA8C20AA3A120080A6C4 /* RecordViewTemplate.xib */; };
+		B080EA8F20AA3DA70080A6C4 /* RecordViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080EA8E20AA3DA70080A6C4 /* RecordViewTemplate.swift */; };
+		B080EA9120AA50080080A6C4 /* ReusableRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080EA9020AA50080080A6C4 /* ReusableRecordCell.swift */; };
+		D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */; };
+		D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */; };
+		D71DD45A20A39C4500FA2E2F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */; };
+		D71DD45C20A63D6000FA2E2F /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */; };
+		D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */; };
+		D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74CD0972098132000D98014 /* BestTimerViewController.swift */; };
+		D78FD7052092799D00124110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FD7042092799D00124110 /* Assets.xcassets */; };
+		D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */; };
+		D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */; };
+		D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */; };
+		D7D9DB2320911C7E0000EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */; };
+		D7D9DB2E20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB2D20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift */; };
+		D7D9DB3920911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB3820911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift */; };
+		D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */; };
+		D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4820911D010000EFA7 /* TOSViewController.swift */; };
+		D7D9DB4B209124530000EFA7 /* ActivityLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */; };
+		D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB4E209124660000EFA7 /* RaceViewController.swift */; };
+		D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */; };
+		D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB52209124800000EFA7 /* PaceViewController.swift */; };
+		D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */; };
+		D7D9DB5920912BA50000EFA7 /* RacingSansOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7D9DB5820912BA50000EFA7 /* RacingSansOne-Regular.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7D9DB2A20911C7E0000EFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7D9DB0D20911C7C0000EFA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7D9DB1420911C7C0000EFA7;
+			remoteInfo = "Keep Pace iOS";
+		};
+		D7D9DB3520911C7E0000EFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7D9DB0D20911C7C0000EFA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7D9DB1420911C7C0000EFA7;
+			remoteInfo = "Keep Pace iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KeepPaceDataModel.xcdatamodel; sourceTree = "<group>"; };
+		B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RaceModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		B007C93E20A0FDC600C03F41 /* RaceSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceSeed.swift; sourceTree = "<group>"; };
+		B007C93F20A0FDC600C03F41 /* RecordSeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSeed.swift; sourceTree = "<group>"; };
+		B080EA8C20AA3A120080A6C4 /* RecordViewTemplate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewTemplate.xib; sourceTree = "<group>"; };
+		B080EA8E20AA3DA70080A6C4 /* RecordViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewTemplate.swift; sourceTree = "<group>"; };
+		B080EA9020AA50080080A6C4 /* ReusableRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableRecordCell.swift; sourceTree = "<group>"; };
+		D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceUnitTableViewController.swift; sourceTree = "<group>"; };
+		D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		D74CD0972098132000D98014 /* BestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTimerViewController.swift; sourceTree = "<group>"; };
+		D78FD7042092799D00124110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Pace iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D7D9DB1D20911C7C0000EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7D9DB2220911C7E0000EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7D9DB2420911C7E0000EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D9DB2920911C7E0000EFA7 /* Keep Pace iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep Pace iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D9DB2D20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_Pace_iOSTests.swift; sourceTree = "<group>"; };
+		D7D9DB2F20911C7E0000EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D9DB3420911C7E0000EFA7 /* Keep Pace iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep Pace iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D9DB3820911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_Pace_iOSUITests.swift; sourceTree = "<group>"; };
+		D7D9DB3A20911C7E0000EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		D7D9DB4820911D010000EFA7 /* TOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
+		D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogViewController.swift; sourceTree = "<group>"; };
+		D7D9DB4E209124660000EFA7 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
+		D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrunchViewController.swift; sourceTree = "<group>"; };
+		D7D9DB52209124800000EFA7 /* PaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceViewController.swift; sourceTree = "<group>"; };
+		D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTimerViewController.swift; sourceTree = "<group>"; };
+		D7D9DB5820912BA50000EFA7 /* RacingSansOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RacingSansOne-Regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7D9DB1220911C7C0000EFA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB2620911C7E0000EFA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB3120911C7E0000EFA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B007C93320A0FDBD00C03F41 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B007C93420A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift */,
+				B007C93520A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift */,
+				B007C93620A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift */,
+				B007C93720A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B007C93C20A0FDC600C03F41 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				B007C93D20A0FDC600C03F41 /* DatabaseHelper.swift */,
+				B007C93E20A0FDC600C03F41 /* RaceSeed.swift */,
+				B007C93F20A0FDC600C03F41 /* RecordSeed.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		D7D9DB0C20911C7C0000EFA7 = {
+			isa = PBXGroup;
+			children = (
+				D7D9DB1720911C7C0000EFA7 /* Keep Pace iOS */,
+				D7D9DB2C20911C7E0000EFA7 /* Keep Pace iOSTests */,
+				D7D9DB3720911C7E0000EFA7 /* Keep Pace iOSUITests */,
+				D7D9DB1620911C7C0000EFA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7D9DB1620911C7C0000EFA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */,
+				D7D9DB2920911C7E0000EFA7 /* Keep Pace iOSTests.xctest */,
+				D7D9DB3420911C7E0000EFA7 /* Keep Pace iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7D9DB1720911C7C0000EFA7 /* Keep Pace iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B007C93C20A0FDC600C03F41 /* database */,
+				B007C93320A0FDBD00C03F41 /* model */,
+				D7D9DB1820911C7C0000EFA7 /* AppDelegate.swift */,
+				D7D9DB1A20911C7C0000EFA7 /* MainViewController.swift */,
+				D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */,
+				D7305F2E20929FB5008A8DFE /* RecordsViewController.swift */,
+				D7D9DB4620911CF10000EFA7 /* SplashViewController.swift */,
+				D7D9DB4A209124530000EFA7 /* ActivityLogViewController.swift */,
+				D71DD45B20A63D6000FA2E2F /* ButtonCollectionViewCell.swift */,
+				D706553120A1079E00E92AD8 /* SettingsTableViewController.swift */,
+				D71DD45920A39C4500FA2E2F /* AboutTableViewController.swift */,
+				D706553320A1175200E92AD8 /* DistanceUnitTableViewController.swift */,
+				D7D9DB4E209124660000EFA7 /* RaceViewController.swift */,
+				D7D9DB502091246C0000EFA7 /* CrunchViewController.swift */,
+				D7D9DB52209124800000EFA7 /* PaceViewController.swift */,
+				D7D9DB54209124880000EFA7 /* JustTimerViewController.swift */,
+				D74CD0972098132000D98014 /* BestTimerViewController.swift */,
+				D7D9DB4820911D010000EFA7 /* TOSViewController.swift */,
+				B080EA8C20AA3A120080A6C4 /* RecordViewTemplate.xib */,
+				B080EA8E20AA3DA70080A6C4 /* RecordViewTemplate.swift */,
+				D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */,
+				B080EA9020AA50080080A6C4 /* ReusableRecordCell.swift */,
+				D78FD7042092799D00124110 /* Assets.xcassets */,
+				D7D9DB2420911C7E0000EFA7 /* Info.plist */,
+				D7D9DB5720912B9A0000EFA7 /* fonts */,
+				24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */,
+			);
+			path = "Keep Pace iOS";
+			sourceTree = "<group>";
+		};
+		D7D9DB2C20911C7E0000EFA7 /* Keep Pace iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D9DB2D20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift */,
+				D7D9DB2F20911C7E0000EFA7 /* Info.plist */,
+			);
+			path = "Keep Pace iOSTests";
+			sourceTree = "<group>";
+		};
+		D7D9DB3720911C7E0000EFA7 /* Keep Pace iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D9DB3820911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift */,
+				D7D9DB3A20911C7E0000EFA7 /* Info.plist */,
+			);
+			path = "Keep Pace iOSUITests";
+			sourceTree = "<group>";
+		};
+		D7D9DB5720912B9A0000EFA7 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D7D9DB5820912BA50000EFA7 /* RacingSansOne-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7D9DB1420911C7C0000EFA7 /* Keep Pace iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D9DB3D20911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOS" */;
+			buildPhases = (
+				D7D9DB1120911C7C0000EFA7 /* Sources */,
+				D7D9DB1220911C7C0000EFA7 /* Frameworks */,
+				D7D9DB1320911C7C0000EFA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Keep Pace iOS";
+			productName = "Keep Pace iOS";
+			productReference = D7D9DB1520911C7C0000EFA7 /* Keep Pace iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7D9DB2820911C7E0000EFA7 /* Keep Pace iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D9DB4020911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOSTests" */;
+			buildPhases = (
+				D7D9DB2520911C7E0000EFA7 /* Sources */,
+				D7D9DB2620911C7E0000EFA7 /* Frameworks */,
+				D7D9DB2720911C7E0000EFA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7D9DB2B20911C7E0000EFA7 /* PBXTargetDependency */,
+			);
+			name = "Keep Pace iOSTests";
+			productName = "Keep Pace iOSTests";
+			productReference = D7D9DB2920911C7E0000EFA7 /* Keep Pace iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7D9DB3320911C7E0000EFA7 /* Keep Pace iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D9DB4320911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOSUITests" */;
+			buildPhases = (
+				D7D9DB3020911C7E0000EFA7 /* Sources */,
+				D7D9DB3120911C7E0000EFA7 /* Frameworks */,
+				D7D9DB3220911C7E0000EFA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7D9DB3620911C7E0000EFA7 /* PBXTargetDependency */,
+			);
+			name = "Keep Pace iOSUITests";
+			productName = "Keep Pace iOSUITests";
+			productReference = D7D9DB3420911C7E0000EFA7 /* Keep Pace iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7D9DB0D20911C7C0000EFA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Daniel Katz";
+				TargetAttributes = {
+					D7D9DB1420911C7C0000EFA7 = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					D7D9DB2820911C7E0000EFA7 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = D7D9DB1420911C7C0000EFA7;
+					};
+					D7D9DB3320911C7E0000EFA7 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = D7D9DB1420911C7C0000EFA7;
+					};
+				};
+			};
+			buildConfigurationList = D7D9DB1020911C7C0000EFA7 /* Build configuration list for PBXProject "Keep Pace iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7D9DB0C20911C7C0000EFA7;
+			productRefGroup = D7D9DB1620911C7C0000EFA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7D9DB1420911C7C0000EFA7 /* Keep Pace iOS */,
+				D7D9DB2820911C7E0000EFA7 /* Keep Pace iOSTests */,
+				D7D9DB3320911C7E0000EFA7 /* Keep Pace iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7D9DB1320911C7C0000EFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D9DB2320911C7E0000EFA7 /* LaunchScreen.storyboard in Resources */,
+				D7D9DB1E20911C7C0000EFA7 /* Main.storyboard in Resources */,
+				B080EA8D20AA3A120080A6C4 /* RecordViewTemplate.xib in Resources */,
+				D7D9DB5920912BA50000EFA7 /* RacingSansOne-Regular.ttf in Resources */,
+				D78FD7052092799D00124110 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB2720911C7E0000EFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB3220911C7E0000EFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7D9DB1120911C7C0000EFA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D9DB55209124880000EFA7 /* JustTimerViewController.swift in Sources */,
+				D7305F2F20929FB5008A8DFE /* RecordsViewController.swift in Sources */,
+				D7D9DB4720911CF10000EFA7 /* SplashViewController.swift in Sources */,
+				B080EA8F20AA3DA70080A6C4 /* RecordViewTemplate.swift in Sources */,
+				D71DD45C20A63D6000FA2E2F /* ButtonCollectionViewCell.swift in Sources */,
+				B007C93920A0FDBD00C03F41 /* RaceModel+CoreDataProperties.swift in Sources */,
+				D7D9DB4F209124660000EFA7 /* RaceViewController.swift in Sources */,
+				D7D9DB1B20911C7C0000EFA7 /* MainViewController.swift in Sources */,
+				B007C93820A0FDBD00C03F41 /* RaceModel+CoreDataClass.swift in Sources */,
+				D7D9DB53209124800000EFA7 /* PaceViewController.swift in Sources */,
+				B007C93B20A0FDBD00C03F41 /* RecordModel+CoreDataProperties.swift in Sources */,
+				B007C94020A0FDC600C03F41 /* DatabaseHelper.swift in Sources */,
+				24DEA8602097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld in Sources */,
+				D71DD45A20A39C4500FA2E2F /* AboutTableViewController.swift in Sources */,
+				B080EA9120AA50080080A6C4 /* ReusableRecordCell.swift in Sources */,
+				D7D9DB1920911C7C0000EFA7 /* AppDelegate.swift in Sources */,
+				D7D9DB4920911D010000EFA7 /* TOSViewController.swift in Sources */,
+				D7D9DB4B209124530000EFA7 /* ActivityLogViewController.swift in Sources */,
+				B007C94220A0FDC600C03F41 /* RecordSeed.swift in Sources */,
+				D74CD0982098132000D98014 /* BestTimerViewController.swift in Sources */,
+				B007C93A20A0FDBD00C03F41 /* RecordModel+CoreDataClass.swift in Sources */,
+				D706553420A1175300E92AD8 /* DistanceUnitTableViewController.swift in Sources */,
+				B007C94120A0FDC600C03F41 /* RaceSeed.swift in Sources */,
+				D7D9DB512091246C0000EFA7 /* CrunchViewController.swift in Sources */,
+				D706553220A1079F00E92AD8 /* SettingsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB2520911C7E0000EFA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D9DB2E20911C7E0000EFA7 /* Keep_Pace_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D9DB3020911C7E0000EFA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D9DB3920911C7E0000EFA7 /* Keep_Pace_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7D9DB2B20911C7E0000EFA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7D9DB1420911C7C0000EFA7 /* Keep Pace iOS */;
+			targetProxy = D7D9DB2A20911C7E0000EFA7 /* PBXContainerItemProxy */;
+		};
+		D7D9DB3620911C7E0000EFA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7D9DB1420911C7C0000EFA7 /* Keep Pace iOS */;
+			targetProxy = D7D9DB3520911C7E0000EFA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7D9DB1C20911C7C0000EFA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7D9DB1D20911C7C0000EFA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7D9DB2120911C7E0000EFA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7D9DB2220911C7E0000EFA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7D9DB3B20911C7E0000EFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D7D9DB3C20911C7E0000EFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7D9DB3E20911C7E0000EFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
+				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7D9DB3F20911C7E0000EFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6WZ4G2VV7;
+				INFOPLIST_FILE = "Keep Pace iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Keep-Pace-iOS1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7D9DB4120911C7E0000EFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Keep Pace iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.bcit.Keep-Pace-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Pace iOS.app/Keep Pace iOS";
+			};
+			name = Debug;
+		};
+		D7D9DB4220911C7E0000EFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Keep Pace iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.bcit.Keep-Pace-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Pace iOS.app/Keep Pace iOS";
+			};
+			name = Release;
+		};
+		D7D9DB4420911C7E0000EFA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Keep Pace iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.bcit.Keep-Pace-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Keep Pace iOS";
+			};
+			name = Debug;
+		};
+		D7D9DB4520911C7E0000EFA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Keep Pace iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.bcit.Keep-Pace-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Keep Pace iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7D9DB1020911C7C0000EFA7 /* Build configuration list for PBXProject "Keep Pace iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D9DB3B20911C7E0000EFA7 /* Debug */,
+				D7D9DB3C20911C7E0000EFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D9DB3D20911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D9DB3E20911C7E0000EFA7 /* Debug */,
+				D7D9DB3F20911C7E0000EFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D9DB4020911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D9DB4120911C7E0000EFA7 /* Debug */,
+				D7D9DB4220911C7E0000EFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D9DB4320911C7E0000EFA7 /* Build configuration list for PBXNativeTarget "Keep Pace iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D9DB4420911C7E0000EFA7 /* Debug */,
+				D7D9DB4520911C7E0000EFA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24DEA85E2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */,
+			);
+			currentVersion = 24DEA85F2097D2E3001809B0 /* KeepPaceDataModel.xcdatamodel */;
+			path = KeepPaceDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D7D9DB0D20911C7C0000EFA7 /* Project object */;
+}
