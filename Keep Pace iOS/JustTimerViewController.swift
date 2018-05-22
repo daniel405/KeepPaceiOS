@@ -155,7 +155,6 @@ UICollectionViewDataSource {
         
         estimatedTimeLabel.text = timeTextFormat(pace: getEstimatedTime(pace: currentPace))
         
-        paceNotification()
         notification.invalidate()
         notification = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
             self.currentPaceLabel.textColor = UIColor.black
@@ -167,22 +166,7 @@ UICollectionViewDataSource {
             // do what you'd like now that the sound has completed playing
         }
     }
-    
-    @objc func paceNotification()
-    {
-        if raceModel.getAveragePace()?.mAveragePace != nil
-        {
-            if pace > (raceModel.getAveragePace()?.mAveragePace)!
-            {
-                currentPaceLabel.textColor = UIColor.green
-            }
-            else
-            {
-                currentPaceLabel.textColor = UIColor.red
-                vibrate()
-            }
-        }
-    }
+
     
     func getCurrentPace(currentMarker: Int, currentTime: Double) -> Double {
         
@@ -248,6 +232,7 @@ UICollectionViewDataSource {
     // Start timer
     @IBAction func startButton(_ sender: Any) {
         startTimer()
+        counter = 2460000.0
         started = true
         startButtonStyle.isHidden = true
         CollectionViewVisible()
