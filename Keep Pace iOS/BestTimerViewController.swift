@@ -172,15 +172,17 @@ UICollectionViewDataSource {
     
     @objc func paceNotification()
     {
-        if raceModel.getAveragePace()?.mAveragePace != nil
+        let bestTime = raceModel.getBestRecord()
+        
+        if bestTime != nil
         {
-            if pace > (raceModel.getAveragePace()?.mAveragePace)!
+            if estimatedFinishTime < Double((bestTime?.mTime)!)
             {
-                currentPaceLabel.textColor = UIColor.green
+                estimatedTimeLabel.textColor = UIColor.green
             }
             else
             {
-                currentPaceLabel.textColor = UIColor.red
+                estimatedTimeLabel.textColor = UIColor.red
                 vibrate()
             }
         }
@@ -238,6 +240,10 @@ UICollectionViewDataSource {
             else if raceType == "FULL MARATHON"
             {
                 estimatedFinishTime = 26.2 / pace
+            }
+            else
+            {
+                estimatedFinishTime = raceModel.mDistance / pace
             }
         }
         else
