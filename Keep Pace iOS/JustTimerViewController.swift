@@ -22,6 +22,7 @@ UICollectionViewDataSource {
     var markersNum = 0
     var currentPace = 0.0
     var saved = false
+    var paused = false
     var estimatedFinishTime = 0.0
     var pace = 0.0
     var avgPace = 0.0
@@ -155,6 +156,7 @@ UICollectionViewDataSource {
         
         estimatedTimeLabel.text = timeTextFormat(pace: getEstimatedTime(pace: currentPace))
         
+        paceNotification()
         notification.invalidate()
         notification = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
             self.currentPaceLabel.textColor = UIColor.black
@@ -166,7 +168,22 @@ UICollectionViewDataSource {
             // do what you'd like now that the sound has completed playing
         }
     }
-
+    
+    @objc func paceNotification()
+    {
+        if raceModel.getAveragePace()?.mAveragePace != nil
+        {
+            if pace > (raceModel.getAveragePace()?.mAveragePace)!
+            {
+                currentPaceLabel.textColor = UIColor.green
+            }
+            else
+            {
+                currentPaceLabel.textColor = UIColor.red
+                vibrate()
+            }
+        }
+    }
     
     func getCurrentPace(currentMarker: Int, currentTime: Double) -> Double {
         
@@ -232,7 +249,6 @@ UICollectionViewDataSource {
     // Start timer
     @IBAction func startButton(_ sender: Any) {
         startTimer()
-        counter = 2460000.0
         started = true
         startButtonStyle.isHidden = true
         CollectionViewVisible()
@@ -275,6 +291,7 @@ UICollectionViewDataSource {
         if pauseButtonStyle.currentTitle == "PAUSE"
         {
             timer.invalidate()
+            paused = true
             pauseButtonStyle.setTitle("RESUME", for: .normal)
         }
         else
@@ -283,6 +300,7 @@ UICollectionViewDataSource {
             {
                 timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
                 pauseButtonStyle.setTitle("PAUSE", for: .normal)
+                paused = false
             }
         }
     }
@@ -313,8 +331,31 @@ UICollectionViewDataSource {
         currentPaceLabel.textColor = UIColor.black
     }
     
+    @objc func pauseWhenBackground(noti: Notification) {
+        let time = UserDefaults.standard
+        time.set(Date(), forKey: "savedTime")
+        
+    }
+    
+    @objc func willEnterForeground(noti: Notification) {
+        let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date
+        let calendar = Calendar.current
+        let timeOld = calendar.dateComponents([.hour,.minute,.second], from: savedDate!)
+        let timeNew = calendar.dateComponents([.hour,.minute,.second], from: Date())
+        let millisecondsOld = (timeOld.hour! * 60 * 60 * 1000) + (timeOld.minute! * 60 * 1000) + (timeOld.second! * 1000)
+        let millisecondsNew = (timeNew.hour! * 60 * 60 * 1000) + (timeNew.minute! * 60 * 1000) + (timeNew.second! * 1000)
+        let elapsedMilliseconds = millisecondsNew - millisecondsOld
+        if paused != true
+        {
+            counter += Double(elapsedMilliseconds)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: .UIApplicationWillEnterForeground, object: nil)
+        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         pauseButtonStyle.isHidden = true
         resetButtonStyle.isHidden = true
@@ -343,6 +384,7 @@ UICollectionViewDataSource {
         default:
             raceModel = dbHelper.getRaceModel(idToLookFor: 0)!
         }
+        
         
         if raceType == "GROUSE GRIND"
         {
@@ -442,6 +484,24 @@ UICollectionViewDataSource {
     
     func CollectionViewVisible() {
         collectionView.alpha = 1
+    }
+    
+}
+
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
 
