@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -434,167 +433,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlm-4D-Idd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="1253.9408866995075"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="8Sf-U0-9LH">
-            <objects>
-                <viewController title="Settings" id="Z2K-nE-Xlb" customClass="SettingsViewController" customModule="Keep_Pace_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dWh-DE-xir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KaI-ka-DYP">
-                                <rect key="frame" x="0.0" y="243" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMx-9n-cJZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <color key="backgroundColor" red="0.15747414836393217" green="0.62481595023127634" blue="0.88911802030456855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="25"/>
-                                        <state key="normal" title="Select A Mode">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleModeSelection:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="R4u-ei-bcZ"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-WC-dha">
-                                        <rect key="frame" x="0.0" y="-243" width="375" height="0.0"/>
-                                        <color key="backgroundColor" red="0.17647058823529413" green="0.69803921568627447" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                        <state key="normal" title="Regular Mode">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="modeTapped:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="Trv-Cc-4t1"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCS-ni-EJU">
-                                        <rect key="frame" x="0.0" y="-243" width="375" height="0.0"/>
-                                        <color key="backgroundColor" red="0.17647058823529413" green="0.69803921568627447" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                        <state key="normal" title="Pro Mode">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="modeTapped:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="EIs-bk-yin"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.097964193209999995" green="0.57233467339999999" blue="0.82505155460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="LCS-ni-EJU" firstAttribute="leading" secondItem="KaI-ka-DYP" secondAttribute="leading" id="6BX-rp-dyE"/>
-                                    <constraint firstItem="GKf-WC-dha" firstAttribute="leading" secondItem="KaI-ka-DYP" secondAttribute="leading" id="Nmd-C1-ZEB"/>
-                                    <constraint firstAttribute="trailing" secondItem="bMx-9n-cJZ" secondAttribute="trailing" id="P8D-hS-i6C"/>
-                                    <constraint firstAttribute="trailing" secondItem="LCS-ni-EJU" secondAttribute="trailing" id="eZX-Zj-iNf"/>
-                                    <constraint firstAttribute="trailing" secondItem="GKf-WC-dha" secondAttribute="trailing" id="jgv-EW-GAK"/>
-                                    <constraint firstItem="bMx-9n-cJZ" firstAttribute="leading" secondItem="KaI-ka-DYP" secondAttribute="leading" id="mhO-6x-1kK"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayd-VE-66M">
-                                <rect key="frame" x="141.33333333333334" y="96" width="92.333333333333343" height="31.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <color key="textColor" red="0.087689243257045746" green="0.47799801826477051" blue="0.93504112958908081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hDF-NO-b4d">
-                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-Ip-WIX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <color key="backgroundColor" red="0.15747414840000001" green="0.62481595020000003" blue="0.88911802029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="25"/>
-                                        <state key="normal" title="Select A Unit">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleUnitSelection:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="XMM-ai-lxT"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6W-U7-EcG">
-                                        <rect key="frame" x="0.0" y="-160" width="375" height="0.0"/>
-                                        <color key="backgroundColor" red="0.1764705882" green="0.69803921570000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                        <state key="normal" title="Kilometers">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="unitTapped:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="caF-QZ-DcQ"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWc-pd-EDc">
-                                        <rect key="frame" x="0.0" y="-160" width="375" height="0.0"/>
-                                        <color key="backgroundColor" red="0.1764705882" green="0.69803921570000005" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RacingSansOne-Regular" family="Racing Sans One" pointSize="17"/>
-                                        <state key="normal" title="Miles">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="unitTapped:" destination="Z2K-nE-Xlb" eventType="touchUpInside" id="1uV-xN-Yf2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.097964193209999995" green="0.57233467339999999" blue="0.82505155460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="ySg-Ip-WIX" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leadingMargin" id="9Ou-tj-HvL"/>
-                                    <constraint firstItem="MWc-pd-EDc" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leadingMargin" id="Dnj-iL-PEK"/>
-                                    <constraint firstItem="MWc-pd-EDc" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leading" id="F02-ek-ASc"/>
-                                    <constraint firstAttribute="trailing" secondItem="ySg-Ip-WIX" secondAttribute="trailing" id="Fkp-uv-7Oe"/>
-                                    <constraint firstItem="ySg-Ip-WIX" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leading" id="Kqz-DR-C9m"/>
-                                    <constraint firstItem="C6W-U7-EcG" firstAttribute="trailing" secondItem="hDF-NO-b4d" secondAttribute="trailingMargin" id="RqK-JI-Q8z"/>
-                                    <constraint firstAttribute="trailing" secondItem="C6W-U7-EcG" secondAttribute="trailing" id="XIF-tc-LEc"/>
-                                    <constraint firstItem="ySg-Ip-WIX" firstAttribute="trailing" secondItem="hDF-NO-b4d" secondAttribute="trailingMargin" id="fOS-Oe-KWw"/>
-                                    <constraint firstItem="C6W-U7-EcG" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leading" id="hfE-eX-TKL"/>
-                                    <constraint firstItem="MWc-pd-EDc" firstAttribute="trailing" secondItem="hDF-NO-b4d" secondAttribute="trailingMargin" id="mRM-Gs-j1z"/>
-                                    <constraint firstAttribute="trailing" secondItem="MWc-pd-EDc" secondAttribute="trailing" id="mfP-JL-gcx"/>
-                                    <constraint firstItem="C6W-U7-EcG" firstAttribute="leading" secondItem="hDF-NO-b4d" secondAttribute="leadingMargin" id="ryd-6p-LUY"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulB-uM-Lgu">
-                                <rect key="frame" x="138" y="334" width="99" height="31.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <color key="textColor" red="0.087689243259999994" green="0.47799801829999999" blue="0.93504112959999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ulB-uM-Lgu" firstAttribute="top" secondItem="KaI-ka-DYP" secondAttribute="bottom" constant="47" id="37Q-Km-dbu"/>
-                            <constraint firstItem="QTQ-Wj-yfh" firstAttribute="trailing" secondItem="KaI-ka-DYP" secondAttribute="trailing" id="7G6-uQ-zJr"/>
-                            <constraint firstItem="QTQ-Wj-yfh" firstAttribute="trailing" secondItem="hDF-NO-b4d" secondAttribute="trailing" id="BrA-qi-624"/>
-                            <constraint firstItem="hDF-NO-b4d" firstAttribute="leading" secondItem="QTQ-Wj-yfh" secondAttribute="leading" id="I9F-xT-KYg"/>
-                            <constraint firstItem="KaI-ka-DYP" firstAttribute="top" secondItem="hDF-NO-b4d" secondAttribute="bottom" constant="39" id="KlO-7s-QOc"/>
-                            <constraint firstItem="Ayd-VE-66M" firstAttribute="top" secondItem="QTQ-Wj-yfh" secondAttribute="top" constant="52" id="LFa-UM-cYR"/>
-                            <constraint firstItem="hDF-NO-b4d" firstAttribute="top" secondItem="Ayd-VE-66M" secondAttribute="bottom" constant="32.670000000000002" id="SQK-LO-m4s"/>
-                            <constraint firstItem="ulB-uM-Lgu" firstAttribute="centerX" secondItem="dWh-DE-xir" secondAttribute="centerX" id="ZyN-fB-FEa"/>
-                            <constraint firstItem="hDF-NO-b4d" firstAttribute="centerX" secondItem="dWh-DE-xir" secondAttribute="centerX" id="m7p-wS-Hjf"/>
-                            <constraint firstItem="KaI-ka-DYP" firstAttribute="centerX" secondItem="dWh-DE-xir" secondAttribute="centerX" id="nSX-1G-dAw"/>
-                            <constraint firstItem="Ayd-VE-66M" firstAttribute="centerX" secondItem="dWh-DE-xir" secondAttribute="centerX" id="oX5-OO-F1I"/>
-                            <constraint firstItem="KaI-ka-DYP" firstAttribute="leading" secondItem="QTQ-Wj-yfh" secondAttribute="leading" id="zK9-yF-gvh"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QTQ-Wj-yfh"/>
-                    </view>
-                    <connections>
-                        <outlet property="modeSelection" destination="bMx-9n-cJZ" id="WNf-hf-FBV"/>
-                        <outlet property="unitSelection" destination="ySg-Ip-WIX" id="WUO-Ac-dYy"/>
-                        <outletCollection property="modeButtons" destination="LCS-ni-EJU" collectionClass="NSMutableArray" id="6xM-SM-LhQ"/>
-                        <outletCollection property="modeButtons" destination="GKf-WC-dha" collectionClass="NSMutableArray" id="z3B-ah-dhh"/>
-                        <outletCollection property="unitButtons" destination="C6W-U7-EcG" collectionClass="NSMutableArray" id="cLo-ez-i08"/>
-                        <outletCollection property="unitButtons" destination="MWc-pd-EDc" collectionClass="NSMutableArray" id="AM9-5k-hfH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ar-2I-SGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-410" y="573"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1298,7 +1136,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="333" height="151"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will overwrite you previous records. Would you like to continue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-Nj-z5I">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will overwrite your previous records. Would you like to continue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-Nj-z5I">
                             <rect key="frame" x="8" y="21" width="317" height="47"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1818,7 +1656,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="333" height="151"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will overwrite you previous records. Would you like to continue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-rH-4bw">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will overwrite your previous records. Would you like to continue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-rH-4bw">
                             <rect key="frame" x="8" y="21" width="317" height="47"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
