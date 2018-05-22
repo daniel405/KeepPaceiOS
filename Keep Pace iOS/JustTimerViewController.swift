@@ -156,7 +156,6 @@ UICollectionViewDataSource {
         
         estimatedTimeLabel.text = timeTextFormat(pace: getEstimatedTime(pace: currentPace))
         
-        paceNotification()
         notification.invalidate()
         notification = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
             self.currentPaceLabel.textColor = UIColor.black
@@ -166,22 +165,6 @@ UICollectionViewDataSource {
     func vibrate() {
         AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
             // do what you'd like now that the sound has completed playing
-        }
-    }
-    
-    @objc func paceNotification()
-    {
-        if raceModel.getAveragePace()?.mAveragePace != nil
-        {
-            if pace > (raceModel.getAveragePace()?.mAveragePace)!
-            {
-                currentPaceLabel.textColor = UIColor.green
-            }
-            else
-            {
-                currentPaceLabel.textColor = UIColor.red
-                vibrate()
-            }
         }
     }
     
