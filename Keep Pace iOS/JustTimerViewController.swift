@@ -246,12 +246,12 @@ UICollectionViewDataSource {
     
     
     @objc func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
     
     @objc func UpdateTimer() {
-        counter += 1
+        counter += 50
         currentTimeLabel.text = timeTextFormat(pace: counter)
     }
     
@@ -281,7 +281,7 @@ UICollectionViewDataSource {
         {
             if started == true
             {
-                timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
                 pauseButtonStyle.setTitle("PAUSE", for: .normal)
                 paused = false
             }
