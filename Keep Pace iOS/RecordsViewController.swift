@@ -36,7 +36,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func populateCells(recordView: RecordViewTemplate, raceModel: RaceModel, recordModel: RecordModel) {
         recordView.nameLabel.text = recordModel.mDate
         if unitType == "M" {
-            recordView.paceLabel.text = String(format: "%.2f", recordModel.mAveragePace) + " mi/h"
+            recordView.paceLabel.text = String(format: "%.2f", raceModel.convertToMiles(kilometer: recordModel.mAveragePace)) + " mi/h"
         } else {
             recordView.paceLabel.text = String(format: "%.2f", recordModel.mAveragePace) + " km/h"
         }
