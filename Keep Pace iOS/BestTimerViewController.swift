@@ -160,7 +160,7 @@ UICollectionViewDataSource {
         paceNotification()
         notification.invalidate()
         notification = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) {_ in
-            self.currentPaceLabel.textColor = UIColor.black
+            self.estimatedTimeLabel.textColor = UIColor.black
         }
     }
     
@@ -172,15 +172,17 @@ UICollectionViewDataSource {
     
     @objc func paceNotification()
     {
-        if raceModel.getAveragePace()?.mAveragePace != nil
+        let bestTime = raceModel.getBestRecord()
+        
+        if bestTime != nil
         {
-            if pace > (raceModel.getAveragePace()?.mAveragePace)!
+            if estimatedFinishTime < Double((bestTime?.mTime)!)
             {
-                currentPaceLabel.textColor = UIColor.green
+                estimatedTimeLabel.textColor = UIColor.green
             }
             else
             {
-                currentPaceLabel.textColor = UIColor.red
+                estimatedTimeLabel.textColor = UIColor.red
                 vibrate()
             }
         }
@@ -238,6 +240,10 @@ UICollectionViewDataSource {
             else if raceType == "FULL MARATHON"
             {
                 estimatedFinishTime = 26.2 / pace
+            }
+            else
+            {
+                estimatedFinishTime = raceModel.mDistance / pace
             }
         }
         else
@@ -325,11 +331,13 @@ UICollectionViewDataSource {
         estimatedFinishTime = 0.0
         pace = 0.0
         started = false
+        resetButtonStyle.isHidden = true
+        pauseButtonStyle.isHidden = true
         startButtonStyle.isHidden = false
         CollectionViewInvisible()
         self.collectionView?.scrollToItem(at:IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         pauseButtonStyle.setTitle("PAUSE", for: .normal)
-        currentPaceLabel.textColor = UIColor.black
+        estimatedTimeLabel.textColor = UIColor.black
     }
     
     @objc func pauseWhenBackground(noti: Notification) {
@@ -408,6 +416,15 @@ UICollectionViewDataSource {
             startButtonStyle.setBackgroundImage(image, for: .normal)
         } else {
             startButtonStyle.setTitle("START", for: .normal)
+        }
+        
+        if unitType == "M" && (raceType == "1/2 MARATHON" || raceType == "FULL MARATHON")
+        {
+            currentPaceLabel.text = "0.0 mi/h"
+        }
+        else
+        {
+            currentPaceLabel.text = "0.0 km/h"
         }
         
         
@@ -494,5 +511,21 @@ UICollectionViewDataSource {
     
 }
 
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
 
 
