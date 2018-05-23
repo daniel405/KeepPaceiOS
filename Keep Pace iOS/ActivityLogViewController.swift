@@ -31,7 +31,12 @@ class ActivityLogViewController: UIViewController, UITableViewDelegate, UITableV
         
         if recordModel != nil {
             
-            paceLabelUpdate(recordView: recordView, value: String(format: "%.2f", (recordModel?.mAveragePace)!))
+            if unitType == "M" {
+                paceLabelUpdate(recordView: recordView, value: String(format: "%.2f", (raceModel.convertToMiles(kilometer: recordModel!.mAveragePace))))
+            } else {
+                paceLabelUpdate(recordView: recordView, value: String(format: "%.2f", (recordModel?.mAveragePace)!))
+            }
+
             recordView.bestLabel.text = raceModel.timeTextFormat(pace: Double((recordModel?.mTime)!))
             
         } else {
