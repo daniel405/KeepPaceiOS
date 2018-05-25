@@ -795,10 +795,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KPSplash" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-Va-1Uo">
-                                <rect key="frame" x="67.666666666666686" y="342" width="240" height="128"/>
+                                <rect key="frame" x="87" y="354" width="201" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="G40-dS-klY"/>
-                                    <constraint firstAttribute="width" constant="240" id="Pfz-O7-tOx"/>
+                                    <constraint firstAttribute="height" constant="105" id="G40-dS-klY"/>
+                                    <constraint firstAttribute="width" constant="201" id="Pfz-O7-tOx"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -816,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qe-8G-ttb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="-911"/>
+            <point key="canvasLocation" x="-274.39999999999998" y="-911.08374384236458"/>
         </scene>
         <!--Best Timer View Controller-->
         <scene sceneID="Onr-a3-g5M">
